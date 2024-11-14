@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <!-- Header here -->
-    </head>
-    <body>
-        <!-- AccessMap Logo credit to Miranda -->
-        <img src="{{ url_for("static", filename="images/AccessMapLogo.png")}}"
-        alt="AccessMap: Mapping Access for All"
-        class="access_map_logo">
+
+{% extends "Base.html" %}
+
+{% block title %}AccessMap: Find a Location{% endblock %}
+
+{% block content %}
 
         <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1bSSaIE2VyhBqxWrmYMw_hlL2ckxnzkA&ehbc=2E312F" width="640" height="480"></iframe>
 
@@ -21,5 +17,4 @@
 
             <button type="submit">Find Location</button>
         </form>
-    </body>
-</html>
+{% endblock %}
