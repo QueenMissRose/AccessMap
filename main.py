@@ -24,16 +24,21 @@ from oauth2client.service_account import ServiceAccountCredentials
 # credentials = ServiceAccountCredentials.from_json_keyfile_name(
 #     "client_secret.json", scope)
 # client = gspread.authorize(credentials)
-#
+
 # # Find a workbook by name and open the first sheet
 # sheet = client.open("LocationsAccessMap").sheet2
 
-print(sheet.get_all_values())
+# print(sheet.get_all_values())
 
 
 @app.route("/", methods=["GET", "POST"])
 def home():
     return render_template("Home.html")
+
+@app.route("/find_location", methods=["GET", "POST"])
+def find_a_location():
+    """Allows a user to search for a location by name or address"""
+    return render_template("FindLocation.html")
 
 @app.route("/update_rating", methods=["GET", "POST"])
 def update_rating():
