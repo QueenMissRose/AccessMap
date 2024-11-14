@@ -11,7 +11,7 @@
 
         <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1bSSaIE2VyhBqxWrmYMw_hlL2ckxnzkA&ehbc=2E312F" width="640" height="480"></iframe>
 
-        <form action="{{ url_for('update_rating') }}" >
+        <form action="{{ url_for('update_rating') }}" method="POST">
             <label for="location_name">Location Name:</label><br>
             <!-- TODO: Present user with related options if a name matches multiple locations-->
             <input type="text" id="lname" name="location_name"><br>
@@ -37,7 +37,7 @@
             <label for="commonallergens">Common Allergens Rating:</label><br>
             <input type="text" id="allergens" name="commonallergens"><br>
 
-            <button type="button">Submit</button>
+            <button type="submit">Submit</button>
         </form>
     </body>
 </html>
