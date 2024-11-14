@@ -1,0 +1,40 @@
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+#logo {
+    position: relative;
+    top: -13rem;
+    left: -10rem;
+    transform: scale(35%);
+}
+
+#siteName {
+    position: relative;
+    font-size: 2rem;
+    top: 0.5rem;
+    left: 6rem;
+}
+
+/* content containers: placeholder + map */
+
+.content-containers {
+    display: flex;
+    justify-content: center;
+    margin-top: -23rem;
+    column-gap: 3rem;
+}
+
+.placeholder {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 40%;
+    background-color: pink;
+}
