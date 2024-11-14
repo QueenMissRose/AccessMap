@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Header here -->
+    </head>
+    <body>
+        <!-- AccessMap Logo credit to Miranda -->
+        <img src="{{ url_for("static", filename="images/AccessMapLogo.png")}}"
+        alt="AccessMap: Mapping Access for All"
+        class="access_map_logo">
+
+        <a href="{{ url_for('update_rating') }}">
+            Update A Rating
+        </a>
+
+        <!-- Custom Google My Map -->
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1bSSaIE2VyhBqxWrmYMw_hlL2ckxnzkA&ehbc=2E312F" width="640" height="480"></iframe>
+
+    </body>
+</html>
