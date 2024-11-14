@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Header here -->
-    </head>
-    <body>
-        <!-- AccessMap Logo credit to Miranda -->
-        <img src="{{ url_for("static", filename="images/AccessMapLogo.png")}}"
-        alt="AccessMap: Mapping Access for All"
-        class="access_map_logo">
+<head>
+    <nav>
+        <ul>
+            <li>
+                <!-- AccessMap Logo credit to Miranda -->
+                <img src="/static/images/AccessMapLogo.png" id="logo" alt="Mapping Access for All">
+            </li>
+            <li id="siteName"> AccessMap</li>
+        </ul>
+    </nav>
 
-        <a href="{{ url_for('update_rating') }}">
-            Update A Rating
-        </a>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AccessMap</title>
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    
+</head>
+<body>
+
+    <div class="content-containers">
+        <div class="placeholder"> 
+            <p>placeholder for icon legend</p>
+            <a href="#">Update a Rating</a>
+        </div>
 
         <!-- Custom Google My Map -->
-        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1bSSaIE2VyhBqxWrmYMw_hlL2ckxnzkA&ehbc=2E312F" width="640" height="480"></iframe>
-
-    </body>
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1bSSaIE2VyhBqxWrmYMw_hlL2ckxnzkA&ehbc=2E312F" width="640" height="480"></iframe>
+    </div>
+    
+</body>
 </html>
