@@ -19,7 +19,7 @@ import gspread
 
 from oauth2client.service_account import ServiceAccountCredentials
 
-# Use credentials to create a client to interact with the Google Drive API
+# # Use credentials to create a client to interact with the Google Drive API
 # scope = ["https://spreadsheets.google.com/feeds"]
 # credentials = ServiceAccountCredentials.from_json_keyfile_name(
 #     "client_secret.json", scope)

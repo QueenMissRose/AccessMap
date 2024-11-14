@@ -14,3 +14,10 @@ AccessMap is a web application that allows users to view a location's accessibil
   - Rates a location based on the presence of common allergens (i.e. tree nuts, gluten, et cetra) and their protective measures against cross-contamination (if any)
 
 The goal of this project is to prepare users to "know before they go"!
+
+## Current Dependencies
+
+If you would like to help us on our quest for accessibility, please note this application has the following dependencies for developers:
+
+- Flask (version 3.1 or greater)
+- Python (version 3.11 or greater)
