@@ -1,46 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <nav>
+        <ul>
+            <li>
+                <!-- AccessMap Logo credit to Miranda -->
+                <img src="/static/images/AccessMapLogo.png" id="logo" alt="Mapping Access for All">
+            </li>
+            <li id="siteName">AccessMap</li>
+        </ul>
+    </nav>
 
-{% extends "Base.html" %}
-
-{% block title %}AccessMap{% endblock %}
-
-{% block content %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AccessMap</title>
+    
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/normalize.css">
+    
+</head>
+<body>
     <div class="content-containers">
         <div class="placeholder"> 
             <p>placeholder for icon legend</p>
-            <a href="{{ url_for('find_a_location') }}">Update a Rating</a>
+            <a href="/find_location">Find a Location</a>
         </div>
 
-        <!-- Icon texts-->
-            <!-- Label: Sensory Rating -->
-            <!-- Popup text: Rates a location based on the tendency 
-             for sensory overload and its accessibility for those 
-             with sensory disabilities-->
-
-            <!-- Label: Mobility Rating -->
-            <!-- Popup text: Rates how difficult the terrain 
-             is to navigate (i.e. slopes, uneven pavement, 
-             accessible parking, curb cuts, clear pathways, 
-             et cetra)-->
-
-            <!-- Label: Service Dog Relief Rating -->
-            <!-- Popup text: Rates presence of appropriate places 
-             for service dogs to relieve themselves (i.e. grass, 
-             mulch, pebbles or dirt without landscaping or 
-             gardening that could be damaged, access to poop 
-             bags and trash cans, et cetra) -->
-
-            <!-- Label: Wheelchair Accessibility Rating -->
-            <!-- Popup text: Rates a location based on wheelchair 
-             accessibility (elevators with space to accommodate 
-             the chair, accessible parking, accessible bathroom stalls)-->
-
-            <!-- Label: Common Allergen Rating  -->
-            <!-- Popup text: Rates a location based on the 
-             presence of common allergens (i.e. tree nuts, gluten, 
-             et cetra) and their protective measures against 
-             cross-contamination (if any)-->
         <!-- Custom Google My Map -->
     <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1bSSaIE2VyhBqxWrmYMw_hlL2ckxnzkA&ehbc=2E312F" width="640" height="480"></iframe>
     </div>
-    
-{% endblock %}
+</body>
+</html>
