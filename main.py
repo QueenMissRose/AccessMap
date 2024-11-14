@@ -60,3 +60,10 @@ def update_rating():
               f"Common Allergens Rating: {common_allergens_rating}")
         
     return render_template("UpdateRating.html")
+
+# TODO: Get what the user input for the location name
+# TODO: Find similar location names to what the user input using database query (SQL, CS50, or ORM)
+# TODO: Make a dropdown with similar location names
+    # TODO: Index dropdown with actual location 
+# TODO: Edit the row that matches the unique location ID only
+    
