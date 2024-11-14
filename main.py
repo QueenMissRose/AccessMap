@@ -16,16 +16,17 @@ app = Flask(__name__)
 # ------------------- Google Sheets API Setup ------------------- #
 
 import gspread
+
 from oauth2client.service_account import ServiceAccountCredentials
 
 # Use credentials to create a client to interact with the Google Drive API
-scope = ["https://spreadsheets.google.com/feeds"]
-credentials = ServiceAccountCredentials.from_json_keyfile_name(
-    "client_secret.json", scope)
-client = gspread.authorize(credentials)
-
-# Find a workbook by name and open the first sheet
-sheet = client.open("LocationsAccessMap").sheet2
+# scope = ["https://spreadsheets.google.com/feeds"]
+# credentials = ServiceAccountCredentials.from_json_keyfile_name(
+#     "client_secret.json", scope)
+# client = gspread.authorize(credentials)
+#
+# # Find a workbook by name and open the first sheet
+# sheet = client.open("LocationsAccessMap").sheet2
 
 print(sheet.get_all_values())
 
