@@ -13,20 +13,20 @@ from flask import (
 # Configure application
 app = Flask(__name__)
 
-# # ------------------- Google Sheets API Setup ------------------- #
+# ------------------- Google Sheets API Setup ------------------- #
 
 import gspread
+
 from oauth2client.service_account import ServiceAccountCredentials
 
 # Use credentials to create a client to interact with the Google Drive API
-scope = ["https://spreadsheets.google.com/feeds"]
-cred_path = os.getenv("Google_API_Credentials")
-credentials = ServiceAccountCredentials.from_json_keyfile_name(
-    os.path.join(os.path.dirname(__file__), cred_path), scope)
-client = gspread.authorize(credentials)
-
-# Find a workbook by name and open the first sheet
-sheet = client.open("LocationsAccessMap").sheet2
+# scope = ["https://spreadsheets.google.com/feeds"]
+# credentials = ServiceAccountCredentials.from_json_keyfile_name(
+#     "client_secret.json", scope)
+# client = gspread.authorize(credentials)
+#
+# # Find a workbook by name and open the first sheet
+# sheet = client.open("LocationsAccessMap").sheet2
 
 print(sheet.get_all_values())
 
@@ -34,20 +34,6 @@ print(sheet.get_all_values())
 @app.route("/", methods=["GET", "POST"])
 def home():
     return render_template("Home.html")
-
-@app.route("/find_location", methods=["GET", "POST"])
-def find_a_location():
-    """Allows a user to find a location"""
-    
-    if request.method == "POST":
-        print("Looking for location...")
-    # TODO: Get what the user input for the location name
-    # TODO: Find similar location names to what the user input using database query (SQL, CS50, or ORM)
-    # TODO: Make a dropdown with similar location names
-        # TODO: Index dropdown with actual location 
-    # TODO: Edit the row that matches the unique location ID only
-    
-    return render_template("FindLocation.html")
 
 @app.route("/update_rating", methods=["GET", "POST"])
 def update_rating():
@@ -76,3 +62,9 @@ def update_rating():
         
     return render_template("UpdateRating.html")
 
+# TODO: Get what the user input for the location name
+# TODO: Find similar location names to what the user input using database query (SQL, CS50, or ORM)
+# TODO: Make a dropdown with similar location names
+    # TODO: Index dropdown with actual location 
+# TODO: Edit the row that matches the unique location ID only
+    
