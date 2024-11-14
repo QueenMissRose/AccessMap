@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Header here -->
+    </head>
+    <body>
+        <!-- AccessMap Logo credit to Miranda -->
+        <img src="{{ url_for("static", filename="images/AccessMapLogo.png")}}"
+        alt="AccessMap: Mapping Access for All"
+        class="access_map_logo">
+
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1bSSaIE2VyhBqxWrmYMw_hlL2ckxnzkA&ehbc=2E312F" width="640" height="480"></iframe>
+
+        <form action="{{ url_for('find_a_location') }}" method="POST">
+            <label for="location_name">Location Name:</label><br>
+            <!-- TODO: Present user with related options if a name matches multiple locations-->
+            <input type="text" id="lname" name="location_name"><br>
+
+            <label for="location_address">Location Address:</label><br>
+            <input type="text" id="address" name="location_address"><br>
+
+            <button type="submit">Find Location</button>
+        </form>
+    </body>
+</html>

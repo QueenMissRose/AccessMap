@@ -1,27 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <nav>
-        <ul>
-            <li>
-                <!-- AccessMap Logo credit to Miranda -->
-                <img src="/static/images/AccessMapLogo.png" id="logo" alt="Mapping Access for All">
-            </li>
-            <li id="siteName"> AccessMap</li>
-        </ul>
-    </nav>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AccessMap</title>
+{% extends "Base.html" %}
 
-    <!-- stylesheets -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    
-</head>
-<body>
+{% block title %}AccessMap{% endblock %}
 
+{% block content %}
     <div class="content-containers">
         <div class="placeholder"> 
             <p>placeholder for icon legend</p>
@@ -32,5 +14,4 @@
     <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1bSSaIE2VyhBqxWrmYMw_hlL2ckxnzkA&ehbc=2E312F" width="640" height="480"></iframe>
     </div>
     
-</body>
-</html>
+{% endblock %}
