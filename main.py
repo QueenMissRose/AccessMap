@@ -39,6 +39,51 @@ from oauth2client.service_account import ServiceAccountCredentials
 def home():
     return render_template("Home.html")
 
+@app.route("/sign_up", methods=["GET", "POST"])
+def sign_up():
+    """
+    Allows a user to register for an account and view maps tailored 
+    to their accessibility interests
+    """
+    
+    if request.method == "POST":
+        username = request.form.get("txt")
+        email = request.form.get("email")
+        password = request.form.get("pswd")
+        
+        print(username, email, password)
+        
+        # TODO: Hash password
+        
+        # TODO: Save new user to the database
+        
+        # Redirect to sign up part 2
+        return redirect(url_for("choose_accessibility_filters"))
+    
+    return render_template("signup.html")
+
+@app.route("/choose_accessibility_filters", methods=["GET", "POST"])
+def choose_accessibility_filters():
+    """
+    Allows the user to see maps customized to their accessibility needs
+    """
+    
+    if request.method == "POST":
+        # Handle the form submission
+        print("Form submitted")
+        
+        # TODO: Save accessibility preferences 
+        
+        return redirect(url_for("home"))
+    
+    return render_template("signup-cont.html")
+
+@app.route("/log_in", methods=["GET", "POST"])
+def log_in():
+    """Logs an existing user in"""
+    
+    return render_template("Home.html")
+
 @app.route("/find_location", methods=["GET", "POST"])
 def find_a_location():
     """Allows a user to search for a location by name or address""" 
