@@ -88,7 +88,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: red;
+  background: #fff;
   height: 100%;
   width: 100%;
   display: flex;
@@ -97,8 +97,9 @@
 }
 
 .disappear {
-  animation: vanish 1s forwards;
+  animation: vanish 3s forwards;
 }
+
 @keyframes vanish{
   100%{
     opacity:  0;
@@ -114,10 +115,8 @@ nav ul {
 }
 
 #logo {
-    /* position: relative; */
-    top: -13rem;
-    left: -10rem;
-    transform: scale(35%);
+    width: 60%;
+    height: 60%;
 }
 
 #siteName {
