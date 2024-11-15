@@ -19,7 +19,7 @@ def query_sql():
     return cursor.fetchall()
 
 
-def write_to_gsheet(data):
+def write_to_gsheet():
     results = query_sql()
     for i in results:
         if i[0] != sh.sheet1.get('A2:A1000'):
