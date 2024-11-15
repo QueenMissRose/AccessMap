@@ -85,16 +85,25 @@
 /***^PRELOADER***/
 /* Preloader, before page is loaded */
 .preloader{
-    /*
-    Making the preloader floating over other elements.
-    The preloader is visible by default. 
-    */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: red;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.disappear {
+  animation: vanish 1s forwards;
+}
+@keyframes vanish{
+  100%{
+    opacity:  0;
+    visibility: hidden;
+  }
 }
 
 
@@ -105,14 +114,14 @@ nav ul {
 }
 
 #logo {
-    position: relative;
+    /* position: relative; */
     top: -13rem;
     left: -10rem;
     transform: scale(35%);
 }
 
 #siteName {
-    position: relative;
+    /* position: relative; */
     font-size: 2rem;
     top: 0.5rem;
     left: 6rem;

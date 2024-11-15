@@ -1,5 +1,8 @@
 //after window is loaded completely 
-window.onload = () => {
-    //hide the preloader
-    document.querySelector(".preloader").style.display = "none"
+let preloader = document.querySelector('.preloader')
+
+window.addEventListener('load', vanish)
+
+function vanish(){
+    preloader.classList.add('disappear')
 }
