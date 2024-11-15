@@ -1,0 +1,29 @@
+/*Descriptive Icons Area*/
+#descriptive-icons-container{
+    border: 1px solid black;
+    margin: 16px;
+  }
+  #descriptive-icons-container img{
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+    margin: 16px;
+  }
+  #popup {
+    margin: 8px;
+    display: none;
+    position: absolute; 
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    word-wrap: break-word;
+    max-width: 200px;                   
+    text-align: left;                   
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1500; 
+    pointer-events: none;
+  }
+  
