@@ -15,22 +15,25 @@
 
         <!-- Stylesheets -->
         <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="stylesheet" href="/static/css/reset.css">
     </head>
 
     <body>
+
         <!-- Preloader -->
         <div class="preloader">
-            <img src="/static/images/logo variations/accessmap.gif" alt="pulsing logo before page is loaded">
+            <span class="preloader-js"></span>
         </div>
+        <canvas id='canvas'></canvas>
+        <img src="" alt="safe"></img>
 
-        <!-- Header -->
         <header>
             <!-- Header Nav -->
             <nav>
                 <ul>
                     <li>
                         <!-- AccessMap Logo credit to Miranda -->
-                        <img src="/static/images/logo variations/logo + title.png" id="logo" alt="Mapping Access for All">
+                        <img src="/static/images/AccessMapLogo.png" id="logo" alt="Mapping Access for All">
                     </li>
                     <li id="siteName">AccessMap</li>
                 </ul>
@@ -51,9 +54,6 @@
                 width="640" height="480"></iframe>
         </div>
 
-
-        <!-- Scripts -->
-         <script src="/js/preloader.js"></script>
     </body>
 
 </html>
