@@ -19,6 +19,7 @@
     --background: #e5e5f0;
     --primary: #cf727f;
     --secondary: #7bc2e0;
+    --grey: #dbdbe6;
     /* --off-primary: #dfe3f0;
     --accent: #aca9ef;
     --accent: #e1d6e6;  */
@@ -102,15 +103,15 @@ body{
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	font-family: 'Jost', sans-serif;
-	background: var(--white);
+	font-family: var(--poppins);
+  font-weight: 200;
+	background: var(--background);
 }
-.main{
+div.main{
 	width: 350px;
 	height: 500px;
-	background: red;
+	background: #fff;
 	overflow: hidden;
-	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
 	border-radius: 10px;
 	box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
@@ -119,7 +120,6 @@ body{
 }
 .imgWrapper {
      width: 100%;
-
      display: flex;
      align-items: center;
      justify-content: center;
@@ -127,26 +127,27 @@ body{
 img {
      width: 100px;
      height: 100px;
+     margin: 20px 0;
 }
 .signup{
 	position: relative;
-	width:100%;
-	height: 100%;
+	width: 100%;
+	height: 95%;
 }
 label{
 	color: var(--black);
-	font-size: 2.3em;
+	font-size: 2em;
 	justify-content: center;
 	display: flex;
 	margin: 0 0 40px 0;
-	font-weight: bold;
+	font-weight: 500;
 	cursor: pointer;
 	transition: .5s ease-in-out;
 }
 input{
 	width: 60%;
 	height: 10px;
-	background: #e0dede;
+	background: #f5f4f4;
 	justify-content: center;
 	display: flex;
 	margin: 20px auto;
@@ -155,6 +156,9 @@ input{
 	outline: none;
 	border-radius: 5px;
 }
+::placeholder {
+  color: #bbb;
+}
 button{
 	width: 60%;
 	height: 40px;
@@ -162,9 +166,9 @@ button{
 	justify-content: center;
 	display: block;
 	color: #fff;
-	background: var(--red);
+	background: var(--primary);
 	font-size: 1em;
-	font-weight: bold;
+	font-weight: 500;
 	margin-top: 30px;
 	outline: none;
 	border: none;
@@ -176,15 +180,19 @@ button{
 	background: #6d44b8;
 } */
 .login{
+  padding: 20px;
 	height: 460px;
-	background: #eee;
+	background: #f5f4f4;
 	border-radius: 60% / 10%;
 	transform: translateY(-180px);
 	transition: .8s ease-in-out;
 }
 .login label{
-	color: #573b8a;
+	color: var(--secondary);
 	transform: scale(.6);
+}
+.login input {
+  background-color: #fff;
 }
 
 #chk:checked ~ .login{
