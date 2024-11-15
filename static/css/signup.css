@@ -107,7 +107,7 @@ body{
   font-weight: 200;
 	background: var(--background);
 }
-div.main{
+div.main {
 	width: 350px;
 	height: 500px;
 	background: #fff;
@@ -203,4 +203,27 @@ button{
 }
 #chk:checked ~ .signup label{
 	transform: scale(.6);
+}
+
+/**** signup cont ****/
+.body {
+  background: #fff;
+  padding: 30px;
+}
+
+h1 {
+  color: var(--black);
+	font-size: 2em;
+	justify-content: center;
+	display: flex;
+	/* margin: 0 0 40px 0; */
+	font-weight: 500;
+  font-family: var(--poppins);
+}
+.imgContainer {
+  display: flex;
+}
+.img {
+  width: 70px;
+  height: 70px;
 }
