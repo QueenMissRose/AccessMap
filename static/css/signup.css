@@ -214,7 +214,7 @@ button{
 	transform: scale(.6);
 }
 
-/**** signup cont ****/
+/**** accessibility needs page ****/
 .body {
   background: #fff;
   padding: 30px;
@@ -256,7 +256,7 @@ h1 {
   justify-content: flex-start;
   align-items: center;
 }
-.span {
+.disability {
   padding: 10px;
 }
 .icon {
