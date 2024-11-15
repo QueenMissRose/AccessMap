@@ -10,38 +10,24 @@ from flask import (
     send_from_directory,
     make_response)
 
+from add_records import add_new_rating_to_db
+import add_gsheets
+from models import Locations
+
 # Configure application
 app = Flask(__name__)
-
-# ------------------- Google Sheets API Setup ------------------- #
-
-import gspread
-
-from oauth2client.service_account import ServiceAccountCredentials
-
-# Use credentials to create a client to interact with the Google Drive API
-# scope = ["https://spreadsheets.google.com/feeds"]
-# credentials = ServiceAccountCredentials.from_json_keyfile_name(
-#     "client_secret.json", scope)
-# client = gspread.authorize(credentials)
-#
-# # Find a workbook by name and open the first sheet
-# sheet = client.open("LocationsAccessMap").sheet2
-
-print(sheet.get_all_values())
 
 
 @app.route("/", methods=["GET", "POST"])
 def home():
     return render_template("Home.html")
 
+
 @app.route("/update_rating", methods=["GET", "POST"])
 def update_rating():
     """Allows a user to update a location's accessibility rating"""
-    
+
     if request.method == "POST":
-        print("posted")
-        
         # Get form information from the user
         location_name = request.form.get("location_name")
         address = request.form.get("location_address")
@@ -50,21 +36,22 @@ def update_rating():
         service_dog_relief_rating = request.form.get("sdogreliefrating")
         wheelchair_rating = request.form.get("wheelchairrating")
         common_allergens_rating = request.form.get("commonallergens")
-        
-        # Check information
-        print(f"Location Name: {location_name}",
-              f"Address: {address}",
-              f"Sensory Rating: {sensory_rating}",
-              f"Mobility Rating: {mobility_rating}",
-              f"Service Dog Relief Rating: {service_dog_relief_rating}",
-              f"Wheelchair Rating: {wheelchair_rating}",
-              f"Common Allergens Rating: {common_allergens_rating}")
-        
+
+        new_rec = Locations(Name=location_name, Address=address, SensoryRating=sensory_rating,
+                            MobilityRating=mobility_rating,
+                            ServiceDogRelief=service_dog_relief_rating, WheelchairAccessible=wheelchair_rating,
+                            CommonAllergenRisk=common_allergens_rating)
+
+        add_new_rating_to_db(new_rec)
+
+        # Flask won't let me call both functions and update both places
+        add_gsheets.write_to_gsheet()
+
     return render_template("UpdateRating.html")
+
 
 # TODO: Get what the user input for the location name
 # TODO: Find similar location names to what the user input using database query (SQL, CS50, or ORM)
 # TODO: Make a dropdown with similar location names
-    # TODO: Index dropdown with actual location 
+# TODO: Index dropdown with actual location
 # TODO: Edit the row that matches the unique location ID only
-    

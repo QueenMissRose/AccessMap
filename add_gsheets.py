@@ -1,5 +1,6 @@
 import sqlite3
 import gspread
+from add_records import add_new_rating_to_db
 
 gc = gspread.service_account(filename='/Users/mermaid/PycharmProjects/AccessMap/accessmap-441715-705d96e6c09e.json')
 
@@ -18,7 +19,7 @@ def query_sql():
     return cursor.fetchall()
 
 
-def write_to_gsheet():
+def write_to_gsheet(data):
     results = query_sql()
     for i in results:
         if i[0] != sh.sheet1.get('A2:A1000'):
