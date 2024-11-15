@@ -10,6 +10,10 @@ from flask import (
     send_from_directory,
     make_response)
 
+import add_gsheets
+from add_records import add_new_rating_to_db
+from models import Locations
+
 # Configure application
 app = Flask(__name__)
 
@@ -88,6 +92,8 @@ def update_rating():
         print("posted")
         
         # Get form information from the user
+        location_name = request.form.get("location_name")
+        address = request.form.get("location_address")
         sensory_rating = request.form.get("sensoryrating")
         mobility_rating = request.form.get("mobilityrating")
         service_dog_relief_rating = request.form.get("sdogreliefrating")
@@ -113,7 +119,15 @@ def update_rating():
             
             # TODO: Use new rating to recalculate a location's average accessibility score
             ## for that category
-            
+            new_record = Locations(Name=location_name, Address=address, SensoryRating=sensory_rating,
+                                MobilityRating=mobility_rating,
+                                ServiceDogRelief=service_dog_relief_rating, WheelchairAccessible=wheelchair_rating,
+                                CommonAllergenRisk=common_allergens_rating)
+
+            add_new_rating_to_db(new_record)
+            # Flask won't update both the database and write to GSheet within the same route.
+            # But you can call this function to update the spreadsheet for manual re-upload.
+            add_gsheets.write_to_gsheet()
             # TODO: Insert the new average into the database
             
             # TODO: Display new average on the success page
