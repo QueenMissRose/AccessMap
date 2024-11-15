@@ -18,11 +18,7 @@
     --text: #262626;
     --background: #e5e5f0;
     --primary: #cf727f;
-    --secondary: #7bc2e0;
-    /* --off-primary: #dfe3f0;
-    --accent: #aca9ef;
-    --accent: #e1d6e6;  */
-  
+    --secondary: #7bc2e0;  
   }
   
   /************REPEATED STYLES****************/
@@ -34,23 +30,14 @@
     margin: 0;
     transition: 0.3s;
   }
+
+  body {
+    margin: 0;
+  }
   
   html {
     scroll-behavior: smooth;
   }
-  
-  /* body {
-    font-size: 1.6rem;
-    background: var(--white-bg-bg);
-    color: var(--dark-bg-text);
-    margin: 0 3.5rem;
-    overflow-x: hidden;
-  }
-  
-  section {
-    margin-top: 10rem;
-    margin-bottom: 20rem;
-  } */
   
   a {
     color: var(--text);
@@ -85,7 +72,6 @@
   }
 
 
-
 /************ STYLES PER SECTION ****************/
 
 /***^PRELOADER***/
@@ -102,8 +88,18 @@
   align-items: center;
 }
 
+.preloader div {
+  width: 50%;
+  height: 50%;
+}
+
+.preloader img {
+  width: 100%;
+  height: auto;
+}
+
 .disappear {
-  animation: vanish 3s forwards;
+  animation: vanish 1s forwards;
 }
 
 @keyframes vanish{
@@ -148,3 +144,10 @@ nav ul {
     width: 40%;
     background-color: pink;
 } */
+
+
+iframe {
+  height: 100vh;
+  width: 100vw;
+
+}
