@@ -2,7 +2,20 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- Header here -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Access Map</title>
+
+        <!-- Fonts: Noto Serif & Poppins -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="static/css/style.css">
+        <link rel="stylesheet" href="static/css/reset.css">
     </head>
     <body>
         <!-- AccessMap Logo credit to Miranda -->
@@ -13,6 +26,13 @@
         <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1bSSaIE2VyhBqxWrmYMw_hlL2ckxnzkA&ehbc=2E312F" width="640" height="480"></iframe>
          
         <form action="/update_rating" method="POST">
+            <label for="location_name">Location Name:</label><br>
+            <!-- TODO: Present user with related options if a name matches multiple locations-->
+            <input type="text" id="lname" name="location_name"><br>
+
+            <label for="location_address">Location Address:</label><br>
+            <input type="text" id="address" name="location_address"><br>
+
             <!-- TODO: Call the average rating for each category -->
             <label for="sensoryrating">Sensory Rating:</label><br>
             <input type="text" id="sensory" name="sensoryrating"><br>
