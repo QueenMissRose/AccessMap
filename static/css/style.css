@@ -5,11 +5,11 @@
     --poppins: "Poppins", sans-serif;
   
     /* Font-Sizes */
-    --h1: clamp(3.2rem, 2vw + 1rem, 3.6rem);
-    --h2: clamp(2.6rem, 2vw + 1rem, 3rem);
-    --h3: clamp(2.2rem, 2vw + 1rem, 2.6rem);
-    --h4: clamp(1.8rem, 2vw + 1rem, 2.2rem);
-    --p: clamp(1.6rem, 2vw + 1rem, 1.7rem);
+    --h1: 3.125rem;
+    --h2: 2.5rem;
+    --h3: 1.875rem;
+    --h4:1.5625rem;
+    --p: 1rem;
 
     /* words for emphasis */
     --span: #cf727f;
@@ -59,10 +59,12 @@
   
   h1 {
     font-size: var(--h1);
+    font-family: var(--noto-serif);
   }
   
   h2 {
     font-size: var(--h2);
+    font-family: var(--noto-serif);
   }
   
   h3 {
@@ -74,8 +76,12 @@
   }
   
   p {
-    font-size: var(--p);
+    font: var(--p) var(--noto-serif);
     line-height: 2.5rem;
+  }
+
+  span {
+    color: var(--span);
   }
 
 
@@ -114,21 +120,21 @@ nav ul {
     list-style-type: none;
 }
 
-#logo {
+/* #logo {
     width: 60%;
     height: 60%;
-}
+} */
 
-#siteName {
+/* #siteName { */
     /* position: relative; */
-    font-size: 2rem;
+    /* font-size: 2rem;
     top: 0.5rem;
     left: 6rem;
-}
+} */
 
 /* content containers: placeholder + map */
 
-.content-containers {
+/* .content-containers {
     display: flex;
     justify-content: center;
     margin-top: -23rem;
@@ -141,4 +147,4 @@ nav ul {
     text-align: center;
     width: 40%;
     background-color: pink;
-}
+} */
