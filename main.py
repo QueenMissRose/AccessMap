@@ -124,19 +124,36 @@ def update_rating():
                                 ServiceDogRelief=service_dog_relief_rating, WheelchairAccessible=wheelchair_rating,
                                 CommonAllergenRisk=common_allergens_rating)
 
-            add_new_rating_to_db(new_record)
-            # Flask won't update both the database and write to GSheet within the same route.
-            # But you can call this function to update the spreadsheet for manual re-upload.
-            add_gsheets.write_to_gsheet()
-            # TODO: Insert the new average into the database
+            try:
+                add_new_rating_to_db(new_record)
+                
+                # Attempt to save the updated score
+                return redirect(url_for("save_score"))
+            except Exception as e:
+                print(f"Couldn't reroute to save the updated score. Exception: {e}")
+                return redirect(url_for("update_rating"))
             
-            # TODO: Display new average on the success page
-            
-            # Redirect to the success page if successful
-            return redirect(url_for("successfully_posted"))
-        
     return render_template("UpdateRating.html")
 
+@app.route("/save_score", methods=["GET"])
+def save_score():
+    """Updates the Google Sheet from update_rating"""
+    
+    try:
+        # Flask won't update both the database and write to GSheet within the same route.
+        # But you can call this function to update the spreadsheet for manual re-upload.
+        add_gsheets.write_to_gsheet()
+        
+        # TODO: Insert the new average into the database
+                
+        # TODO: Display new average on the success page
+        
+    except Exception as e:
+        print(f"Can't update spreadsheet. Exception: {e}")
+    else:
+        # Redirect to the success page if successful
+        return redirect(url_for("successfully_posted"))
+    
 @app.route("/success", methods=["GET"])
 def successfully_posted():
     """Informs the user they have successfully updated the rating"""
