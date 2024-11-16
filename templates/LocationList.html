@@ -36,8 +36,9 @@
 
         
         {% if session["locations"] %}
-            <!-- If SQLite finds a related name in the database, show the dropdown -->
-            <form action="/find_a_location" method="POST">
+            <!-- If SQLite finds a related name in the database, 
+             show a dropdown with similar location names -->
+            <form action="/location_list" method="POST">
                 <label for="location_list">Select a Location</label>
 
                 <select name="location" id="location-list">

@@ -117,34 +117,28 @@ def find_a_location():
         else:
             print("Either a location name or an address has been added!")
             
-            try:
-                # If the user searches by location name and not address
-                
-                # Find similar location names to what the user input using database query
-                matching_locations = find_location.query_find_by_location_name(location_name)
-                
-                print(matching_locations)
-                
-                session["locations"] = matching_locations
-                
-                return redirect(url_for("location_list"))
-            except Exception as e:
-                flash(f"Unable to find location. Exception: {e}")
-                return redirect(url_for("find_a_location"))
+            if location_name and not address:
+                try:
+                    # If the user searches by location name and not address
+                    
+                    # Find similar location names to what the user input using database query
+                    matching_locations = find_location.query_find_by_location_name(location_name)
+                    
+                    print(matching_locations)
+                    
+                    session["locations"] = matching_locations
+                    
+                    return redirect(url_for("location_list"))
+                except Exception as e:
+                    flash(f"Unable to find location. Exception: {e}")
+                    return redirect(url_for("find_a_location"))
             
-                # TODO: Get what the user input for the location name
-                # TODO: Make a dropdown with similar location names
             # TODO: If the user searches by an address
                 # TODO: Get the index of the location that matches the exact address
                 # TODO: OR if there are multiple addressses that match the query
                     # TODO: Find similar addresses to what the user is searching for
                     # TODO: Make a dropdown with similar location addresses
-            
-            # TODO: Index the address or name that matches the unique dropdown ID
-            
-            # TODO: Edit the row that matches the unique location ID only
-            
-            # TODO: Redirect to update_rating if successful
+
 
     return render_template("FindLocation.html")
 
@@ -152,9 +146,22 @@ def find_a_location():
 def location_list():
     """Shows the user a dropdown of matching locations"""
     
-    locations = session["locations"]
+    locations = session.get("locations", [])
     
     print(f"Locations: {locations} ")
+    
+    if request.method == "POST":
+        # If the user has made a selection from the dropdown
+        
+        chosen_location = request.form.get("location")
+        print(chosen_location)
+        
+                    
+        # TODO: Index the address or name that matches the unique dropdown ID
+        
+        # TODO: Edit the row that matches the unique location ID only
+        
+        # TODO: Redirect to update_rating if successful
     
     return render_template("LocationList.html", locations=locations)
 
