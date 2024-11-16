@@ -16,6 +16,9 @@
         <!-- Stylesheets -->
         <link rel="stylesheet" href="/static/css/reset.css">
         <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/icons-section.css">
+
+        <script type="text/javascript" src="/static/js/icons-section.js"></script>
         
     </head>
 
@@ -29,7 +32,7 @@
         <header>
             <!-- Profile Pic -->
             <div>
-                <img src="" alt="" id="profile-pic">
+                <img src="#" alt="user profile picture" id="profile-pic">
             </div>
 
             <!-- Search Form -->
@@ -44,19 +47,32 @@
         <!-- Placeholders -->
         <div class="content-containers">
             <div class="placeholder">
-                <p>placeholder for icon legend</p>
-                <a href="/find_location">Find a Location</a>
+                <div id="descriptive-icons-container">
+                    <img src="\static\images\accessibility-icons\touch.png" class="icon" id="sensory-icon" data-message="Sensory Rating: rates a location based on the tendency for sensory overload and its accessibility for those with sensory disabilities.">
+                    <img src="\static\images\accessibility-icons\mobility.png" class="icon" id="mobility-icon" data-message="Mobility Rating: rates how difficult the terrain is to navigate (i.e. slopes, uneven pavement, accessible parking, curb cuts, clear pathways, et cetra).">
+                    <img src="\static\images\accessibility-icons\dog.png" class="icon" id="service-dog-icon" data-message="Service Dog Relief Rating: rates presence of appropriate places for service dogs to relieve themselves (i.e. grass, mulch, pebbles or dirt without landscaping or gardening that could be damaged, access to poop bags and trash cans, et cetra).">
+                    <img src="\static\images\accessibility-icons\wheelchair.png" class="icon" id="wheelchair-icon" data-message="Wheelchair Accessibility Rating: rates a location based on wheelchair accessibility (elevators with space to accommodate the chair, accessible parking, accessible bathroom stalls).">
+                    <img src="\static\images\accessibility-icons\allergen.png" class="icon" id="allergen-icon" data-message="Common Allergen Rating: rates a location based on the presence of common allergens (i.e. tree nuts, gluten, et cetra) and their protective measures against cross-contamination (if any).">
+                </div>
+                <div id="popup"></div>
+                <a href="FindLocation.html">Find a Location</a>
             </div>
 
             <!-- Custom Google My Map -->
-            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1mx7SpBX4Ltn8MPGGnxRmxjTDcyLwmdQ&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+            <!-- <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1mx7SpBX4Ltn8MPGGnxRmxjTDcyLwmdQ&ehbc=2E312F&noprof=1" width="640" height="480"></iframe> -->
         </div>
 
+        
+        <!-- !TEST -->
+        <h1>Google Map with KMZ Overlay</h1>
+        <div id="map"></div> <!-- Where the map will be rendered -->
         
 
 
         <!-- Scripts -->
-         <script src="/static/js/preloader.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiTV86Hc7MzgYRnXj25rfH3d965QCH8Yw&callback=initMap" async defer></script>
+
+         <script src="/static/js/main.js"></script>
     </body>
 
 </html>

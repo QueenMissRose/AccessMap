@@ -23,6 +23,16 @@
     /* --off-primary: #dfe3f0;
     --accent: #aca9ef;
     --accent: #e1d6e6;  */
+
+    /* disability colours */
+    --red: #cf727e;
+    --yellow: #eede77;
+    --white: #e9e9e9;
+    --blue: #7ac1e0;
+    --green: #3aaf7c;
+    --light-grey: #e2e2e2;
+    --gray: #585858;
+    --black: #262626;
   
   }
   
@@ -205,25 +215,106 @@ button{
 	transform: scale(.6);
 }
 
-/**** signup cont ****/
-.body {
+/**** accessibility needs page ****/
+.accessibilityNeeds {
   background: #fff;
   padding: 30px;
-}
-
-h1 {
-  color: var(--black);
-	font-size: 2em;
-	justify-content: center;
-	display: flex;
-	/* margin: 0 0 40px 0; */
-	font-weight: 500;
-  font-family: var(--poppins);
 }
 .imgContainer {
   display: flex;
 }
-.img {
-  width: 70px;
-  height: 70px;
+  .logoImg {
+    width: 70px;
+    height: 70px;
+  }
+.needsContainer form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+  h1 {
+    text-align: left;
+    color: var(--black);
+    font-size: 2em;
+    justify-content: center;
+    display: flex;
+    /* margin: 0 0 40px 0; */
+    font-weight: 500;
+    font-family: var(--poppins);
+  }
+  .selection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 300px;
+    margin: 40px 0 10px 0;
+  }
+  /* each individual accessibility selection */
+    .item {
+      width: 100%;
+      height: 40px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0 5px;
+      border-radius: 5px;
+      margin: 2px 0;
+    }
+    .item:hover {
+      background: #eee;
+      cursor: pointer;
+    }
+    [aria-checked="true"] {
+      background: #eee;
+    }
+    [aria-checked="false"] {
+      background: none;
+    }
+    [role='checkbox']:checked {
+      background: red;
+    }
+    /* colour behind icon */
+      .bgColour {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 0;
+        z-index: -1;
+      }
+      /* each colour corresponding to each accessibility need */
+        .bgColourRed { /*  */
+          background: var(--red);
+        }
+        .bgColourYellow {
+          background: var(--yellow);
+        }
+        .bgColourGreen {
+          background: var(--green);
+        }
+        .bgColourBlue {
+          background: var(--blue);
+        }
+        .bgColourGrey {
+          background: var(--light-grey);
+        }
+        /* for service dog */
+        .bgColourAll {
+          background: linear-gradient(135deg, rgba(207,114,126,0.5186449579831933) 20%, rgba(238,222,119,0.5242471988795518) 37%, rgba(255,255,255,0.5494572829131652) 52%, rgba(122,193,224,0.5438550420168067) 66%, rgba(58,175,124,0.5102415966386555) 82%);
+        }
+      .icon {
+        width: 40px;
+        height: 40px;
+        /* padding: 2px 0; */
+        color: #000 !important;
+      }
+      /* the disability itself (the text) */
+      .disability {
+        padding: 10px;
+        font-weight: 400;
+        color: #414141;
+      }
+
