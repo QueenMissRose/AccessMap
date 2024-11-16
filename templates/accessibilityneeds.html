@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="/static/css/reset.css">
+		<link rel="stylesheet" href="/static/css/style.css">
+		<link rel="stylesheet" href="/static/css/signup.css">
+
+		<!-- Fonts: Noto Serif & Poppins -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link
+				href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+				rel="stylesheet">
+
+	</head>
+	<body class="accessibilityNeeds">
+		<div> 
+				<div class="imgContainer">
+					<img src="/static/images/logo variations/just logo.png" class="logoImg">
+				</div>
+				<div class="needsContainer">
+					<form action="/choose_accessibility_filters" method="POST">
+						<h1>Which accessibility needs apply to you?</h1>
+						<!-- todo: icons and selections for each accessibility need -->
+						<section class="selection">
+
+							<!-- * Visually impaired  --> 
+							<div class="item"
+									role="checkbox"
+  								id="chkPref"
+  								aria-checked="false"
+  								onclick="changeCheckbox()"
+  								onKeyDown="changeCheckbox(event.code)"
+  								tabindex="0"
+  								aria-labelledby="chk1-label">
+								<!-- <div class="bgColour bgColourGreen"></div> ? GREEN -->
+								<img class="icon" src="/static/images/accessibility-icons/blindness.png" alt="Visibility icon">
+								<span class="disability">Visually Impaired</span>
+							</div>
+
+							<!--* Cognitive disability -->
+							<div class="item"
+									role="checkbox"
+									id="chkPref"
+									aria-checked="false"
+									onclick="changeCheckbox()"
+									onKeyDown="changeCheckbox(event.code)"
+									tabindex="0"
+									aria-labelledby="chk1-label">
+								<!-- <div class="bgColour bgColourGrey"></div> ? GREY -->
+								<img class="icon" src="/static/images/accessibility-icons/cognitive.png" alt="name of icon">
+								<span class="disability">Cognitive Disability</span>
+							</div>
+
+							<!--* Limited Mobility -->
+							<div class="item"
+									role="checkbox"
+									id="chkPref"
+									aria-checked="false"
+									onclick="changeCheckbox()"
+									onKeyDown="changeCheckbox(event.code)"
+									tabindex="0"
+									aria-labelledby="chk1-label">
+								<!-- <div class="bgColour bgColourRed"></div> ? RED -->
+								<svg class="icon" id="outlined_rev" data-name="outlined rev" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 132">
+									<defs>
+										<style>
+											.cls-1 {
+												fill: #cf727e;
+											}
+								
+											.cls-2 {
+												fill: #cf727e;
+											}
+										</style>
+									</defs>
+									<path class="cls-1" d="m86.99,72.9c-.31-1.31-.68-2.61-1.13-3.87-.39-1.13-.83-2.25-1.32-3.33-2.3-5.06-5.66-9.53-9.79-13.15-6.81-5.94-15.73-9.55-25.48-9.55-3.13,0-6.17.37-9.09,1.07-2.07.5-4.08,1.17-6,1.98-2.11.9-4.12,1.97-6.02,3.21-1.11.72-2.19,1.5-3.22,2.33-8.78,7.1-14.4,17.97-14.4,30.14,0,21.39,17.34,38.73,38.73,38.73s38.73-17.34,38.73-38.73c0-3.04-.35-5.99-1.01-8.83Zm-37.72,43.56c-19.15,0-34.73-15.58-34.73-34.73,0-10.06,4.3-19.13,11.15-25.47.93-.88,1.92-1.69,2.95-2.45,1.92-1.43,4-2.66,6.2-3.67,1.04-.47,2.11-.9,3.2-1.27,3.53-1.21,7.3-1.87,11.23-1.87,7.28,0,14.05,2.26,19.64,6.1,4.79,3.3,8.72,7.77,11.36,13,.6,1.17,1.13,2.38,1.59,3.62.46,1.26.86,2.55,1.17,3.87.64,2.61.97,5.34.97,8.14,0,19.15-15.58,34.73-34.73,34.73Z"/>
+									<g>
+										<path class="cls-2" d="m51.77,71.8s0,0,0,0l-.23-3.01h0s28.73-2.69,28.73-2.69c-2.64-5.23-6.57-9.7-11.36-13l-33.1,3.1-.38-2.39,2.61-4.94c-1.09.37-2.16.8-3.2,1.27-2.2,1.01-4.28,2.24-6.2,3.67-1.03.76-2.02,1.57-2.95,2.45l1.37,8.53c.22,1.33.93,2.45,1.93,3.2,1.29,1.48,3.18,2.39,5.26,2.39.21,0,.44-.01.66-.03l8.66-.81.15,1.99s0,0,0,0c-4.67-.11-9.6-.04-16.02.67-1.1.12-1.89,1.11-1.77,2.2.12,1.1,1.1,1.9,2.21,1.77,5.71-.63,10.23-.73,14.47-.66-1.69,1.63-2.74,3.92-2.74,6.46,0,4.97,4.03,9,9,9s9-4.03,9-9c0-2.34-.9-4.47-2.36-6.07,6.96.1,15.09-.23,27.52-2.31-.31-1.32-.71-2.61-1.17-3.87-14.12,2.33-22.5,2.34-30.09,2.08Zm-2.9,13.17c-1.65,0-3-1.35-3-3s1.35-3,3-3,3,1.35,3,3-1.34,3-3,3Z"/>
+										<path class="cls-2" d="m129.89,105.49l-5.53-30.58c-.66-3.68-2.76-6.83-5.89-8.87-3.15-2.04-6.89-2.68-10.54-1.79-4.97,1.22-9.49,2.24-13.62,3.12-.26-.85-.55-1.68-.87-2.5l12.65-1.19c3.85-.36,6.67-3.78,6.31-7.63-.36-3.84-3.77-6.68-7.62-6.31l-19.15,1.79c-8.67-10.43-21.74-17.07-36.36-17.07-2.67,0-5.28.22-7.83.65-.01-.52-.04-1.04-.09-1.56-.65-7.37-4.28-13.71-9.48-16.6l-2.6-1.44-1.33-8.3c-.44-2.73-3-4.59-5.73-4.15-2.73.44-4.59,3.01-4.15,5.73l5.36,33.36C10.52,50.59,2,65.17,2,81.73c0,26.11,21.16,47.27,47.27,47.27s47.27-21.16,47.27-47.27c0-3.61-.4-7.12-1.17-10.5,4.1-.86,8.59-1.89,13.51-3.09,2.57-.63,5.2-.18,7.41,1.25,2.2,1.43,3.67,3.64,4.14,6.23l3.1,17.13-8.81,14.97c-.31-.04-.62-.06-.94-.06-1.77,0-3.4.58-4.73,1.55h-8.07c-1.1,0-2,.89-2,2s.9,2,2,2h5.18c-.25.77-.38,1.6-.38,2.45,0,4.42,3.58,8,8,8s8-3.58,8-8c0-.85-.13-1.68-.38-2.45h2.05c1.95,0,3.78-.86,5.03-2.36,1.24-1.49,1.76-3.45,1.41-5.36Zm-39.35-23.76c0,22.76-18.52,41.27-41.27,41.27S8,104.49,8,81.73c0-13.46,6.48-25.44,16.48-32.98,1.09-.82,2.22-1.58,3.38-2.3,1.88-1.14,3.85-2.13,5.91-2.96,2.29-.94,4.68-1.67,7.15-2.18,2.7-.56,5.49-.85,8.35-.85,11.2,0,21.39,4.5,28.84,11.78,3.82,3.74,6.93,8.22,9.08,13.21.44,1.01.84,2.05,1.19,3.11.43,1.26.8,2.55,1.1,3.87.69,2.99,1.06,6.1,1.06,9.3Zm23.24,37.93c-2.21,0-4-1.8-4-4,0-.92.31-1.77.84-2.45.63-.82,1.58-1.38,2.66-1.52.16-.02.33-.03.5-.03,1.02,0,1.95.38,2.65,1.02.19.15.36.33.5.53.54.68.85,1.53.85,2.45,0,2.2-1.8,4-4,4Zm11.63-11.37c-.49.58-1.2.92-1.96.92h-4.95s-.01-.01-.02-.01l6.14-10.43,1.34,7.43c.13.75-.07,1.51-.55,2.09Z"/>
+									</g>
+								</svg>
+								<span class="disability">Limited Mobility</span>
+							</div>
+
+							<!--* Service dog -->
+							<div class="item"
+									role="checkbox"
+									id="chkPref"
+									aria-checked="false"
+									onclick="changeCheckbox()"
+									onKeyDown="changeCheckbox(event.code)"
+									tabindex="0"
+									aria-labelledby="chk1-label">
+								<!-- <div class="bgColour bgColourAll"></div> ? ALL -->
+								<img class="icon" src="/static/images/accessibility-icons/dog.png" alt="name of icon">
+								<span class="disability">Service Dog</span>
+							</div>
+							
+							<!--* Neuro Diversity (asd etc) -->
+							<div class="item"
+									role="checkbox"
+									id="chkPref"
+									aria-checked="false"
+									onclick="changeCheckbox()"
+									onKeyDown="changeCheckbox(event.code)"
+									tabindex="0"
+									aria-labelledby="chk1-label">
+								<!-- <div class="bgColour bgColourYellow"></div> ? YELLOW -->
+								<img class="icon" src="/static/images/accessibility-icons/sensory.png" alt="name of icon">
+								<span class="disability">Neuro Diversity</span>
+							</div>
+
+							<!--* Hearing impaired -->
+							<div class="item"
+									role="checkbox"
+									id="chkPref"
+									aria-checked="false"
+									onclick="changeCheckbox()"
+									onKeyDown="changeCheckbox(event.code)"
+									tabindex="0"
+									aria-labelledby="chk1-label">
+								<!-- <div class="bgColour bgColourGreen"></div> ? GREEN -->
+								<svg class="icon" id="outlined_rev" data-name="outlined rev" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 132">
+									<defs>
+										<style>
+											.cls-1 {
+												fill: #cf727e;
+											}
+								
+											.cls-2 {
+												fill: #cf727e;
+											}
+										</style>
+									</defs>
+									<path class="cls-2" d="m65.26,32.33c-16.06,1.1-28.95,14.33-29.66,30.42-.08,1.77,0,3.52.19,5.23l1.15,5.48c11.38,3.28,19.73,13.78,19.73,26.2,0,8.42-3.84,15.96-9.86,20.96l.76,3.66c3.62,3.88,8.93,6.16,14.76,5.65,8.63-.75,15.6-7.77,16.3-16.4.01-.15.02-.3.03-.45.57-10.1,4.96-19.5,11.95-26.81,5.49-5.73,8.85-13.51,8.85-22.07,0-18.38-15.53-33.15-34.2-31.87Zm15.33,44.83c-.39.39-.9.58-1.42.58s-1.02-.19-1.41-.58c-.78-.78-.78-2.05,0-2.83,5.5-5.5,5.5-14.45,0-19.94-5.5-5.5-14.44-5.5-19.94,0-.78.78-2.05.78-2.83,0-.78-.78-.78-2.05,0-2.83,7.06-7.06,18.54-7.06,25.6,0s7.06,18.54,0,25.6Z"/>
+									<g>
+										<path class="cls-1" d="m29.39,77.84c-12.03,0-21.82,9.79-21.82,21.82s9.79,21.82,21.82,21.82,21.82-9.79,21.82-21.82-9.79-21.82-21.82-21.82Zm-17.82,21.82c0-9.82,7.99-17.82,17.82-17.82,4.28,0,8.21,1.52,11.29,4.04l-25.06,25.06c-2.52-3.08-4.04-7.01-4.04-11.29Zm17.82,17.82c-4.11,0-7.88-1.41-10.9-3.75l24.96-24.96c2.34,3.02,3.75,6.79,3.75,10.9,0,9.82-7.99,17.82-17.82,17.82Z"/>
+										<path class="cls-1" d="m121.78,48.84c-5.76-20.01-22-35.17-42.38-39.58-1.35-.29-2.68.57-2.97,1.92-.29,1.35.57,2.68,1.92,2.97,18.58,4.02,33.39,17.84,38.64,36.08.32,1.1,1.32,1.81,2.4,1.81.23,0,.46-.03.69-.1,1.33-.38,2.09-1.77,1.71-3.09Z"/>
+										<path class="cls-1" d="m76.01,19.57c-1.35-.29-2.68.57-2.97,1.92-.29,1.35.57,2.68,1.92,2.97,15.33,3.31,27.55,14.71,31.88,29.77.32,1.1,1.32,1.81,2.4,1.81.23,0,.46-.03.69-.1,1.33-.38,2.09-1.77,1.71-3.09-4.85-16.83-18.5-29.58-35.63-33.27Z"/>
+									</g>
+								</svg>
+								<span class="disability">Hearing Impaired</span>
+							</div>
+
+							<!--* Common Allergens -->
+							<div class="item"
+									role="checkbox"
+									id="chkPref"
+									aria-checked="false"
+									onclick="changeCheckbox()"
+									onKeyDown="changeCheckbox(event.code)"
+									tabindex="0"
+									aria-labelledby="chk1-label">
+								<!-- <div class="bgColour bgColourRed"></div> ? RED -->
+								<img class="icon" src="/static/images/accessibility-icons/allergen.png" alt="name of icon">
+								<span class="disability">Common Allergens</span>
+							</div>
+
+							<!--* Mental health / psychological support -->
+							<div class="item"
+									role="checkbox"
+									id="chkPref"
+									aria-checked="false"
+									onclick="changeCheckbox()"
+									onKeyDown="changeCheckbox(event.code)"
+									tabindex="0"
+									aria-labelledby="chk1-label">
+								<!-- <div class="bgColour bgColourBlue"></div> ? BLUE -->
+								<img class="icon" src="/static/images/accessibility-icons/heartThin.png" alt="name of icon">
+								<span class="disability">Psychological Support</span>
+							</div>
+
+							<!--* Speech impaired -->
+							<div class="item"
+									role="checkbox"
+									id="chkPref"
+									aria-checked="false"
+									onclick="changeCheckbox()"
+									onKeyDown="changeCheckbox(event.code)"
+									tabindex="0"
+									aria-labelledby="chk1-label">
+								<!-- <div class="bgColour bgColourGreen"></div> ? GREEN -->
+								<img class="icon" src="/static/images/accessibility-icons/speech.png" alt="name of icon">
+								<span class="disability">Speech Impaired</span>
+							</div>
+
+						</section>
+						<button type="submit">Submit</button>
+					</form>
+				</div>
+		</div>
+
+		<!-- exteral JS link -->
+		<script type="text/javascript" src="/static/js/main.js"></script>
+	</body>
+</html>

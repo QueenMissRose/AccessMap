@@ -22,5 +22,8 @@ def query_sql():
 def write_to_gsheet():
     results = query_sql()
     for i in results:
-        if i[0] != sh.sheet1.get('A2:A1000'):
+        if not worksheet.findall(i[0], in_column=1):
             worksheet.append_row(i)
+
+
+# write_to_gsheet()
