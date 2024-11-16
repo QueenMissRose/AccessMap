@@ -85,7 +85,7 @@ def write_agg_scores_to_gsheets():
                                            valueInputOption="USER_ENTERED",
                                            body={"values": [[f"{tuple[1]}"]]}).execute()
 
-            # Calculates the average allergen risk rating
+            # Calculates the average allergen rating
             avg_allergen_risk_rating = query_allergen_risk_rating_sql()
             for tuple in avg_allergen_risk_rating:
                 if tuple[0] == location_lookup:
