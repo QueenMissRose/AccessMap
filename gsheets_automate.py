@@ -29,21 +29,16 @@ def main():
         service = build("sheets", "v4", credentials=credentials)
         sheets = service.spreadsheets()
 
-        for row in range(2,100):
-            # editor_sensory_rating = int(sheets.values().get(spreadsheetId=SPREADSHEET_ID, range=f"Sheet2!D{row}").execute().get("values")[0][0])
-            # user_sensory_rating = int(sheets.values().get(spreadsheetId=SPREADSHEET_ID, range=f"Sheet2!E{row}").execute().get("values")[0][0])
-            # average_sensory_rating = (editor_sensory_rating+user_sensory_rating)/2
-            # print(f"Average {editor_sensory_rating} & {user_sensory_rating}")
+        for row in range(2,10):
 
-            location_lookup = sheets.values().get(spreadsheetId=SPREADSHEET_ID, range=f"Sheet2!D{row}").execute()
+            location_lookup = sheets.values().get(spreadsheetId=SPREADSHEET_ID, range=f"Sheet2!B{row}").execute().get("values")[0][0]
 
             avg_sensory_rating = query_sensory_rating_sql()
             for tuple in avg_sensory_rating:
                 if tuple[0] == location_lookup:
-                    print(f'Found {tuple[0]}')
-
-            # sheets.values().update(spreadsheetId=SPREADSHEET_ID, range=f"Sheet2!F{row}",
-            #                        valueInputOption="USER_ENTERED", body={"values": [[f"{average_sensory_rating}"]]}).execute()
+                    print(f'Found {tuple[0]} Writing {tuple[1]} to gsheets')
+                    sheets.values().update(spreadsheetId=SPREADSHEET_ID, range=f"Sheet2!F{row}",
+                                   valueInputOption="USER_ENTERED", body={"values": [[f"{tuple[1]}"]]}).execute()
 
     except HttpError as error:
         print(error)
