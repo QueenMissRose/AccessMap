@@ -25,11 +25,12 @@
     --accent: #e1d6e6;  */
 
     /* disability colours */
-    --red: #CF727F;
-    --yellow: #eedf77;
+    --red: #cf727e89;
+    --yellow: #eede7788;
     --white: #e9e9e9;
-    --blue: #7ac1e0;
-    --green: #3aaf7d;
+    --blue: #7ac1e083;
+    --green: #3aaf7c82;
+    --light-grey: #e2e2e2;
     --gray: #585858;
     --black: #262626;
   
@@ -246,7 +247,9 @@ button{
     flex-direction: column;
     align-items: flex-start;
     width: 250px;
+    margin: 40px 0 10px 0;
   }
+  /* each individual accessibility selection */
     .item {
       width: 100%;
       height: 40px;
@@ -254,22 +257,53 @@ button{
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
+      padding: 0 5px;
+      border-radius: 5px;
+      margin: 2px 0;
     }
+    .item:hover {
+      background: #eee;
+      cursor: pointer;
+    }
+    /* colour behind icon */
       .bgColour {
         content: '';
         position: absolute;
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
-        background: var(--red);
-        margin: -5px 0 0 -5px;
+        margin: 0;
         z-index: -1;
       }
+      /* each colour corresponding to each accessibility need */
+        .bgColourRed { /*  */
+          background: var(--red);
+        }
+        .bgColourYellow {
+          background: var(--yellow);
+        }
+        .bgColourGreen {
+          background: var(--green);
+        }
+        .bgColourBlue {
+          background: var(--blue);
+        }
+        .bgColourGrey {
+          background: var(--light-grey);
+        }
+        /* for service dog */
+        .bgColourAll {
+          background: linear-gradient(135deg, rgba(207,114,126,0.5186449579831933) 20%, rgba(238,222,119,0.5242471988795518) 37%, rgba(255,255,255,0.5494572829131652) 52%, rgba(122,193,224,0.5438550420168067) 66%, rgba(58,175,124,0.5102415966386555) 82%);
+        }
       .icon {
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
+        /* padding: 2px 0; */
       }
+      /* the disability itself (the text) */
       .disability {
         padding: 10px;
+        font-weight: 400;
+        color: #414141;
       }
 
