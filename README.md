@@ -17,6 +17,7 @@ The goal of this project is to prepare users to "know before they go"!
 
 ## Table of Contents
 
+- [Credits](https://github.com/audreydottech/AccessMap?tab=readme-ov-file#credits)
 - [Current Dependencies](https://github.com/audreydottech/AccessMap?tab=readme-ov-file#current-dependencies)
 - [Update a Rating](https://github.com/audreydottech/AccessMap?tab=readme-ov-file#update-a-rating)
 
@@ -30,3 +31,16 @@ If you would like to help us on our quest for accessibility, please note this ap
 ## Update a Rating
 
 To update a rating, click on "Find a Location". You will search for a location by name or address. If there are multiple matching names or locations, you will choose from a dropdown menu of possible matches. You may add a rating in any or all of the categories shown on the ratings page, but you must enter a value in one category minimum.
+
+## Credits
+
+A huge thank you to anyone and everyone who made this project possible!
+
+- [Jasmine Glancy:](https://github.com/jasmine-glancy) *Proposer, Backend Developer*
+- [Audrey Le:](https://github.com/audreyle314) *Backend Developer*
+- [Linette Callicutt](https://github.com/lcallicutt) *Backend Developer*
+- [Jolyssa Armstrong](https://github.com/jolyssa) *Frontend Developer, Presentation Developer*
+- [Melissa Rose:](https://github.com/QueenMissRose) *UX/UI Designer, Frontend Developer*
+- [Lillian Nguyen:](https://github.com/lillian-nguyen) *Frontend Developer*
+- [Natasha Faylor:](https://github.com/Gitling01) *Frontend Developer*
+- [Miranda Benfer](https://github.com/mirandabecodes)*Logo Designer*
