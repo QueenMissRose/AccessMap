@@ -19,6 +19,7 @@
   --background: #e5e5f0;
   --primary: #cf727f;
   --secondary: #7bc2e0;
+  --soft-red: #cf727ecb;
 }
 
 /************REPEATED STYLES****************/
@@ -194,38 +195,34 @@ span {
   width: 80px;
   height: 80px;
   margin: 30px;
-
 }
 
 .ratingUpdateSuccessful {
+  text-align: center;
   font-family: var(--noto-serif);
   color: var(--primary);
 }
-
-button {
-  width: 100%;
-  padding: 0 60px;
-  height: 40px;
-  margin: 10px auto;
-  justify-content: center;
-  display: block;
-  color: #fff;
-  background: var(--primary);
-  font-size: 1em;
-  font-weight: 500;
-  margin-top: 30px;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  transition: .2s ease-in;
-  cursor: pointer;
+.homeButton{
+	width: 100%;
+  padding: 10px 60px;
+	height: 40px;
+	margin: 10px auto;
+	display: block;
+	color: #fff;
+	background: var(--primary);
+	font-size: 1em;
+	font-weight: 500;
+	margin-top: 30px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
 }
-
-button:hover {
-  background: var(--soft-red);
-}
-
-/*location list page*/
+  .homeButton:hover {
+    background: var(--soft-red);
+  }
+  /*location list page*/
 
 #location-list-logo {
   transform: scale(0.1);
@@ -249,4 +246,13 @@ button:hover {
 #location-list-a {
   position: relative;
   top: -55rem;
+}
+
+/***************************************************************************
+LocationList html
+**************************************************************************/
+
+.access_map_logo {
+  height: 200px;
+  width: 200px;
 }
