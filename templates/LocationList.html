@@ -18,36 +18,38 @@
     </head>
     <body>
         <!-- AccessMap Logo credit to Miranda -->
-        <div class="img-container">
-            <img src="/static/images/logo variations/logo + title inline.png"
-            alt="AccessMap: Mapping Access for All"
-            class="access_map_logo">
+        <img src="/static/images/logo variations/just logo.png"
+        alt="AccessMap: Mapping Access for All"
+        class="access_map_logo"
+        id="location-list-logo">
+
+        <div id="location-list-iframe">
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1mx7SpBX4Ltn8MPGGnxRmxjTDcyLwmdQ&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
         </div>
-
-        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1mx7SpBX4Ltn8MPGGnxRmxjTDcyLwmdQ&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
         
-        <!-- Flash messages (hardcoded example) -->
-            <!--<p class="flash">This is a flashed message!</p>-->
+            <!-- Flash messages (hardcoded example) -->
+                <!--<p class="flash">This is a flashed message!</p>-->
+    
+            <!-- Dropdown with similar location names (hardcoded example) -->
+            <form id="location-list-form" action="/location_list" method="POST">
+                <label for="location_list">Select a Location</label>
+                <select name="location" id="location-list">
+                    <option value="default" disabled selected>
+                        Please make a selection
+                    </option>
+                    <option value="3">Laugh Factory</option>
+                    <!-- Add more options as needed -->
+                </select> 
+                <button type="submit">Submit a New Accessibility Rating</button>
+            </form>
+    
+            <!-- TODO: Show an error message if a locations list wasn't found
+            No matching locations were found. Please try a different search or 
+            add a new location.-->
+    
+            <br>
+            <a id="location-list-a" href="/find_a_location">Find a New Location</a>
 
-        <!-- Dropdown with similar location names (hardcoded example) -->
-        <form action="/location_list" method="POST">
-            <label for="location_list">Select a Location</label>
-            <select name="location" id="location-list">
-                <option value="default" disabled selected>
-                    Please make a selection
-                </option>
-                <option value="3">Laugh Factory</option>
-                <!-- Add more options as needed -->
-            </select> 
-            <button type="submit">Submit a New Accessibility Rating</button>
-        </form>
-
-        <!-- TODO: Show an error message if a locations list wasn't found
-        No matching locations were found. Please try a different search or 
-        add a new location.-->
-
-        <br>
-        <a href="/find_a_location">Find a New Location</a>
-
+       
     </body>
 </html>

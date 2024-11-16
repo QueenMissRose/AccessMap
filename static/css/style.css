@@ -64,7 +64,8 @@ h4 {
   font-size: var(--h4);
 }
 
-p, input {
+p,
+input {
   font: var(--p);
 }
 
@@ -164,13 +165,14 @@ span {
   width: 100vw;
   height: 100vh;
   border: 2px solid #ccc;
-  margin-top: 100px; /* To prevent overlap with the search box */
+  margin-top: 100px;
+  /* To prevent overlap with the search box */
 }
 
 /***Error Messages***/
 
 .flash {
-  color:#cf727f;
+  color: #cf727f;
 }
 
 /*** rating update page ****/
@@ -220,6 +222,31 @@ span {
   .homeButton:hover {
     background: var(--soft-red);
   }
+  /*location list page*/
+
+#location-list-logo {
+  transform: scale(0.1);
+  position: relative;
+  top: -28rem;
+  left: -27rem;
+}
+
+#location-list-iframe {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -56rem;
+}
+
+#location-list-form {
+  position: relative;
+  top: -55rem;
+}
+
+#location-list-a {
+  position: relative;
+  top: -55rem;
+}
 
 /***************************************************************************
 LocationList html
