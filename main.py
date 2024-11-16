@@ -75,7 +75,7 @@ def choose_accessibility_filters():
         # Handle the form submission
         print("Form submitted")
         
-        # TODO: Save accessibility preferences 
+        # TODO: Save accessibility preferences to user's profile
         
         return redirect(url_for("home"))
     
@@ -104,12 +104,13 @@ def find_a_location():
         f"Address: {(address)}")
 
         if not location_name and not address:
-            # TODO: User must choose either a location or an address in order to update
+            # User must choose either a location or an address in order to update
             # a location's accessibility rating
             print(f"Location Name: {location_name}",
                   f"Address: {address}")
             
-            print("Please add either a location or an address to search for.")
+            flash("Please add either a location or an address to search for.")
+            return redirect(url_for("find_a_location"))
         else:
             print("Either a location name or an address has been added!")
             

@@ -119,6 +119,7 @@ nav ul {
 
 form {
   text-align: center;
+  margin-left: -3rem;
 }
 
 /***^PLACEHOLDER***/
@@ -126,6 +127,13 @@ form {
 .placeholder {
   display: flex;
   justify-content: center;
+  margin-top: 1rem;
+}
+
+.placeholder a {
+  margin-top: -2.2rem;
+  margin-left: -9rem;
+  height: 2rem;
 }
 
 /***^MYMAPS***/
