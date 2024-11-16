@@ -17,7 +17,7 @@ function initMap() {
     // Initialize the map
     const map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: 35.7796, lng: -78.6382 }, // Raleigh, NC
-        zoom: 12,
+        zoom: 10,
     })
 
     // URL to the KML file (use the direct download link)
