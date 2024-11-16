@@ -43,4 +43,4 @@ A huge thank you to anyone and everyone who made this project possible!
 - [Melissa Rose:](https://github.com/QueenMissRose) *UX/UI Designer, Frontend Developer*
 - [Lillian Nguyen:](https://github.com/lillian-nguyen) *Frontend Developer*
 - [Natasha Faylor:](https://github.com/Gitling01) *Frontend Developer*
-- [Miranda Benfer](https://github.com/mirandabecodes)*Logo Designer*
+- [Miranda Benfer](https://github.com/mirandabecodes) *Logo Designer*
