@@ -11,7 +11,6 @@ from flask import (
 
 import gsheets_automate
 import find_location
-import add_gsheets
 from add_records import add_new_rating_to_db
 from models import Locations
 
@@ -42,7 +41,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 
 
 @app.route("/", methods=["GET", "POST"])
-def index():
+def home():
     return render_template("Home.html")
 
 @app.route("/sign_up", methods=["GET", "POST"])
@@ -101,18 +100,23 @@ def find_a_location():
         # Get form information from the user
         location_name = request.form.get("location_name")
         address = request.form.get("location_address")
-
-        session["location_name"] = None
         
+        print(f"Location Name: {location_name}",
+        f"Address: {address}")
+        print(f"Location Name: {type(location_name)}",
+        f"Address: {(address)}")
+
         if not location_name and not address:
             # User must choose either a location or an address in order to update
             # a location's accessibility rating
             print(f"Location Name: {location_name}",
                   f"Address: {address}")
             
-            flash("Please add either a location or an address to search for.")    
+            flash("Please add either a location or an address to search for.")
+            
         else:
             print("Either a location name or an address has been added!")
+            
             
             try:
                 # If the user searches by location name and not address
@@ -120,7 +124,6 @@ def find_a_location():
                     # Find similar location names to what the user input using database query
                     matching_locations = find_location.query_find_by_location_name(location_name)
                     
-                    session["location_name"] = location_name
                 #If the user searches by an address
                 if address and not location_name: 
                     # Find similar addresses to what the user input using database query
@@ -130,7 +133,6 @@ def find_a_location():
                 
                 # Store the matching location in a session variable 
                 session["locations"] = matching_locations
-                
                 
                 return redirect(url_for("location_list"))
             except Exception as e:
@@ -150,9 +152,8 @@ def location_list():
     if request.method == "POST":
         # If the user has made a selection from the dropdown
         
-        chosen_location_id = request.form.get("location")
-        print(chosen_location_id)
-        
+        chosen_location = request.form.get("location")
+        print(chosen_location)
         
         return redirect(url_for("update_rating"))            
         # TODO: Index the address or name that matches the unique dropdown ID
@@ -197,7 +198,7 @@ def update_rating():
             # If the user puts an accessibility rating in, update database
             print("A category's rating has been updated!")
             
-            # Use new rating to recalculate a location's average accessibility score
+            # TODO: Use new rating to recalculate a location's average accessibility score
             ## for that category
             new_record = Locations(Name=location_name, Address=address, SensoryRating=sensory_rating,
                                 MobilityRating=mobility_rating,
@@ -213,7 +214,35 @@ def update_rating():
             except Exception as e:
                 print(f"Couldn't reroute to save the updated score. Exception: {e}")
                 
-            return redirect(url_for("update_rating"))
+            
+        
+        if not sensory_rating and not mobility_rating and not service_dog_relief_rating \
+            and not wheelchair_rating and not common_allergens_rating:
+                # The user must choose to update either a sensory, mobility, service dog relief,
+                # wheelchair, or common allergens rating 
+                flash("Please add a category rating.")
+                return redirect(url_for("update_rating"))
+                
+        else:
+            # If the user puts an accessibility rating in, update database
+            print("A category's rating has been updated!")
+            
+            # TODO: Use new rating to recalculate a location's average accessibility score
+            ## for that category
+            new_record = Locations(Name=location_name, Address=address, SensoryRating=sensory_rating,
+                                MobilityRating=mobility_rating,
+                                ServiceDogRelief=service_dog_relief_rating, WheelchairAccessible=wheelchair_rating,
+                                CommonAllergenRisk=common_allergens_rating)
+
+            print(new_record)
+            try:
+                add_new_rating_to_db(new_record)
+                
+                # Attempt to save the updated score
+                return redirect(url_for("save_score"))
+            except Exception as e:
+                print(f"Couldn't reroute to save the updated score. Exception: {e}")
+                return redirect(url_for("update_rating"))
             
     return render_template("UpdateRating.html")
 
@@ -224,20 +253,18 @@ def save_score():
     try:
         # Flask won't update both the database and write to GSheet within the same route.
         # But you can call this function to update the spreadsheet for manual re-upload.
-        
-        # Insert the new average into the database
-        add_gsheets.write_to_gsheet()
-        
-        # Calculate and re-write scores
         gsheets_automate.write_agg_scores_to_gsheets()
+        
+        # TODO: Insert the new average into the database
                 
-
+        # TODO: Display new average on the success page
+        
     except Exception as e:
         print(f"Can't update spreadsheet. Exception: {e}")
-        
-    # Redirect to the success page if successful
-    return redirect(url_for("successfully_posted"))
-
+    else:
+        # Redirect to the success page if successful
+        return redirect(url_for("successfully_posted"))
+    
 @app.route("/success", methods=["GET"])
 def successfully_posted():
     """Informs the user they have successfully updated the rating"""
