@@ -117,23 +117,29 @@ def find_a_location():
         else:
             print("Either a location name or an address has been added!")
             
-            if location_name and not address:
-                try:
-                    # If the user searches by location name and not address
-                    
+            
+            try:
+                # If the user searches by location name and not address
+                if location_name and not address:
                     # Find similar location names to what the user input using database query
                     matching_locations = find_location.query_find_by_location_name(location_name)
                     
-                    print(matching_locations)
-                    
-                    session["locations"] = matching_locations
-                    
-                    return redirect(url_for("location_list"))
-                except Exception as e:
-                    flash(f"Unable to find location. Exception: {e}")
-                    return redirect(url_for("find_a_location"))
+                #If the user searches by an address
+                if address and not location_name: 
+                    # Find similar addresses to what the user input using database query
+                    matching_locations = find_location.query_find_by_address(address)
+                
+                print(matching_locations)
+                
+                # Store the matching location in a session variable 
+                session["locations"] = matching_locations
+                
+                return redirect(url_for("location_list"))
+            except Exception as e:
+                flash(f"Unable to find location. Exception: {e}")
+                return redirect(url_for("find_a_location"))
             
-            # TODO: If the user searches by an address
+
                 # TODO: Get the index of the location that matches the exact address
                 # TODO: OR if there are multiple addressses that match the query
                     # TODO: Find similar addresses to what the user is searching for
