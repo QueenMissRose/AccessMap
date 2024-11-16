@@ -114,6 +114,10 @@ span {
 
 /***^PLACEHOLDER***/
 
+.content-container {
+  margin: 20px 0 0 0;
+}
+
 .placeholder {
   display: flex;
   justify-content: space-evenly;
@@ -126,11 +130,22 @@ span {
   height: 2rem;
 }
 
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.map {
+  margin-top: 30px !important;
+}
+
 
 /* Search */
 .search {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
 }
 
 
@@ -138,15 +153,10 @@ span {
   border-radius: 50%;
   width: 50px;
   height: auto;
-  transform: translate(20px, 16px);
 }
 
 .search-container input {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
+  width: 250px;
   padding: 10px;
   font-size: 16px;
   border-radius: 5px;
@@ -155,9 +165,16 @@ span {
   border-radius: 25px;
 }
 
+.update-location,
 .update-location a {
-  border: 1px solid red;
-  width: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.update-location img {
+  height: 40px;
+  width: 40px;
 }
 
 /***^MYMAPS***/
