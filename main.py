@@ -173,7 +173,6 @@ def update_rating():
         
         # Check information
         print(f"Sensory Rating: {sensory_rating}",
-        print(f"Sensory Rating: {sensory_rating}",
               f"Mobility Rating: {mobility_rating}",
               f"Service Dog Relief Rating: {service_dog_relief_rating}",
               f"Wheelchair Rating: {wheelchair_rating}",
