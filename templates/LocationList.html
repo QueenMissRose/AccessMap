@@ -34,20 +34,33 @@
             {% endif %}
         {% endwith %}
 
-        <form action="/find_a_location" method="POST">
-            <label for="location_list">Select a Location</label>
+        
+        {% if session["locations"] %}
+            <!-- If SQLite finds a related name in the database, show the dropdown -->
+            <form action="/find_a_location" method="POST">
+                <label for="location_list">Select a Location</label>
 
-            <select name="location" id="location-list">
-                <option value="default" disabled selected>
-                    Please make a selection
-                </option>
-                {% for location in locations %}
-                    <option value="{{ location.LocationID }}">
-                        {{ location.Name }}
+                <select name="location" id="location-list">
+                    <option value="default" disabled selected>
+                        Please make a selection
                     </option>
-                {% endfor %}
-            </select> 
-            <button type="submit">Submit a New Accessibility Rating</button>
-        </form>
+                        {% for location in locations %}
+                            <option value="{{ location[0] }}">
+                                {{ location[1] }}
+                            </option>
+                        {% endfor %}
+                    
+                </select> 
+                <button type="submit">Submit a New Accessibility Rating</button>
+            </form>
+        {% else %}
+            <!-- Show an error message if a locations list wasn't found-->
+            No matching locations were found. Please try a different search or 
+            add a new location.
+
+            <br>
+            <a href="/find_a_location">Find a New Location</a>
+
+        {% endif %}
     </body>
 </html>

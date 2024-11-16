@@ -5,6 +5,7 @@ from flask import (
     flash,
     redirect,
     render_template,
+    session,
     url_for,
     request)
 
@@ -124,10 +125,12 @@ def find_a_location():
                 
                 print(matching_locations)
                 
-                return redirect(url_for("location_list", locations=matching_locations))
+                session["locations"] = matching_locations
+                
+                return redirect(url_for("location_list"))
             except Exception as e:
                 flash(f"Unable to find location. Exception: {e}")
-                
+                return redirect(url_for("find_a_location"))
             
                 # TODO: Get what the user input for the location name
                 # TODO: Make a dropdown with similar location names
@@ -142,7 +145,6 @@ def find_a_location():
             # TODO: Edit the row that matches the unique location ID only
             
             # TODO: Redirect to update_rating if successful
-            return redirect(url_for("update_rating"))
 
     return render_template("FindLocation.html")
 
@@ -150,9 +152,10 @@ def find_a_location():
 def location_list():
     """Shows the user a dropdown of matching locations"""
     
-    locations = request.args.get("locations")
+    locations = session["locations"]
     
     print(f"Locations: {locations} ")
+    
     return render_template("LocationList.html", locations=locations)
 
 @app.route("/update_rating", methods=["GET", "POST"])
@@ -204,7 +207,7 @@ def update_rating():
                 return redirect(url_for("save_score"))
             except Exception as e:
                 print(f"Couldn't reroute to save the updated score. Exception: {e}")
-                return redirect(url_for("update_rating"))
+                
             
         
         if not sensory_rating and not mobility_rating and not service_dog_relief_rating \
