@@ -147,3 +147,10 @@ iframe {
   display: flex;
   margin: 0 auto;
 }
+
+#map {
+  width: 80%;
+  height: 500px;
+  border: 2px solid #ccc;
+  margin-top: 20px;
+}
