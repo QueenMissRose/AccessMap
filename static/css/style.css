@@ -171,3 +171,31 @@ span {
 .flash {
   color:#cf727f;
 }
+
+/*** rating update page ****/
+
+.ratingUpdateBody {
+  width: 100%;
+  height: 100vh;
+}
+
+.ratingUpdateContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbsUp {
+  width: 80px;
+  height: 80px;
+  margin: 30px;
+
+}
+
+.ratingUpdateSuccessful {
+  font-family: var(--noto-serif);
+  color: var(--primary);
+}
