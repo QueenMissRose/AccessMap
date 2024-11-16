@@ -18,12 +18,19 @@ def query_sql():
 
 
 def write_to_gsheet():
+    # Finds everything from ratings table in the database
     results = query_sql()
+    
+    # For everything in results
     for i in results:
+        
         location_name = i[1]
         address = i[2]
+        
+        # Get the new location name and addresses
         values = [location_name, address]
 
+        # If there are any missing location names, add it to the sheet
         if not worksheet.findall(i[1]):
             worksheet.append_row(values)
 
