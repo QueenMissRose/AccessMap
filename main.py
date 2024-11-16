@@ -6,11 +6,10 @@ from flask import (
     redirect,
     render_template,
     url_for,
-    request,
-    send_from_directory,
-    make_response)
+    request)
 
-import add_gsheets
+import gsheets_automate
+import find_location
 from add_records import add_new_rating_to_db
 from models import Locations
 
@@ -110,13 +109,24 @@ def find_a_location():
                   f"Address: {address}")
             
             flash("Please add either a location or an address to search for.")
-            return redirect(url_for("find_a_location"))
+            
         else:
             print("Either a location name or an address has been added!")
             
-            # TODO: If the user searches by location name and not address:
+            try:
+                # If the user searches by location name and not address
+                
+                # Find similar location names to what the user input using database query
+                matching_locations = find_location.query_find_by_location_name(location_name)
+                
+                print(matching_locations)
+                
+                return redirect(url_for("location_list", locations=matching_locations))
+            except Exception as e:
+                flash(f"Unable to find location. Exception: {e}")
+                
+            
                 # TODO: Get what the user input for the location name
-                # TODO: Find similar location names to what the user input using database query (SQL, CS50, or ORM)
                 # TODO: Make a dropdown with similar location names
             # TODO: If the user searches by an address
                 # TODO: Get the index of the location that matches the exact address
@@ -132,6 +142,15 @@ def find_a_location():
             return redirect(url_for("update_rating"))
 
     return render_template("FindLocation.html")
+
+@app.route("/location_list", methods=["GET", "POST"])
+def location_list():
+    """Shows the user a dropdown of matching locations"""
+    
+    locations = request.args.get("locations")
+    
+    print(f"Locations: {locations} ")
+    return render_template("LocationList.html", locations=locations)
 
 @app.route("/update_rating", methods=["GET", "POST"])
 def update_rating():
@@ -193,7 +212,7 @@ def save_score():
     try:
         # Flask won't update both the database and write to GSheet within the same route.
         # But you can call this function to update the spreadsheet for manual re-upload.
-        add_gsheets.write_to_gsheet()
+        gsheets_automate.write_agg_scores_to_gsheets()
         
         # TODO: Insert the new average into the database
                 
