@@ -138,13 +138,6 @@ def find_a_location():
             except Exception as e:
                 flash(f"Unable to find location. Exception: {e}")
                 return redirect(url_for("find_a_location"))
-            
-
-                # TODO: Get the index of the location that matches the exact address
-                # TODO: OR if there are multiple addressses that match the query
-                    # TODO: Find similar addresses to what the user is searching for
-                    # TODO: Make a dropdown with similar location addresses
-
 
     return render_template("FindLocation.html")
 
@@ -162,7 +155,7 @@ def location_list():
         chosen_location = request.form.get("location")
         print(chosen_location)
         
-                    
+        return redirect(url_for("update_rating"))            
         # TODO: Index the address or name that matches the unique dropdown ID
         
         # TODO: Edit the row that matches the unique location ID only

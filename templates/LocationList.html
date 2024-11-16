@@ -23,45 +23,29 @@
         class="access_map_logo">
 
         <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1mx7SpBX4Ltn8MPGGnxRmxjTDcyLwmdQ&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
-
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <ul>
-                    {% for message in messages %}
-                        <p class="flash">{{ message }}</p>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        {% endwith %}
-
         
-        {% if session["locations"] %}
-            <!-- If SQLite finds a related name in the database, 
-             show a dropdown with similar location names -->
-            <form action="/location_list" method="POST">
-                <label for="location_list">Select a Location</label>
+        <!-- Flash messages (hardcoded example) -->
+            <!--<p class="flash">This is a flashed message!</p>-->
 
-                <select name="location" id="location-list">
-                    <option value="default" disabled selected>
-                        Please make a selection
-                    </option>
-                        {% for location in locations %}
-                            <option value="{{ location[0] }}">
-                                {{ location[1] }}
-                            </option>
-                        {% endfor %}
-                    
-                </select> 
-                <button type="submit">Submit a New Accessibility Rating</button>
-            </form>
-        {% else %}
-            <!-- Show an error message if a locations list wasn't found-->
-            No matching locations were found. Please try a different search or 
-            add a new location.
+        <!-- Dropdown with similar location names (hardcoded example) -->
+        <form action="/location_list" method="POST">
+            <label for="location_list">Select a Location</label>
+            <select name="location" id="location-list">
+                <option value="default" disabled selected>
+                    Please make a selection
+                </option>
+                <option value="3">Laugh Factory</option>
+                <!-- Add more options as needed -->
+            </select> 
+            <button type="submit">Submit a New Accessibility Rating</button>
+        </form>
 
-            <br>
-            <a href="/find_a_location">Find a New Location</a>
+        <!-- TODO: Show an error message if a locations list wasn't found
+        No matching locations were found. Please try a different search or 
+        add a new location.-->
 
-        {% endif %}
+        <br>
+        <a href="/find_a_location">Find a New Location</a>
+
     </body>
 </html>
