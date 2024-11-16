@@ -19,6 +19,7 @@
   --background: #e5e5f0;
   --primary: #cf727f;
   --secondary: #7bc2e0;
+  --soft-red: #cf727ecb;
 }
 
 /************REPEATED STYLES****************/
@@ -192,20 +193,18 @@ span {
   width: 80px;
   height: 80px;
   margin: 30px;
-
 }
 
 .ratingUpdateSuccessful {
+  text-align: center;
   font-family: var(--noto-serif);
   color: var(--primary);
 }
-
-button{
+.homeButton{
 	width: 100%;
-  padding: 0 60px;
+  padding: 10px 60px;
 	height: 40px;
 	margin: 10px auto;
-	justify-content: center;
 	display: block;
 	color: #fff;
 	background: var(--primary);
@@ -218,6 +217,15 @@ button{
 	transition: .2s ease-in;
 	cursor: pointer;
 }
-  button:hover {
+  .homeButton:hover {
     background: var(--soft-red);
   }
+
+/***************************************************************************
+LocationList html
+**************************************************************************/
+
+.access_map_logo {
+  height: 200px;
+  width: 200px;
+}
