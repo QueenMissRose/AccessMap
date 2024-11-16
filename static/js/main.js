@@ -38,7 +38,6 @@ function initMap() {
     })
 }
 
-
 // Checked items in AccessibilityNeeds html
 // set variable for all checkbox items
 const items = document.querySelectorAll('.item');
@@ -50,3 +49,4 @@ items.forEach(item => {
         item.setAttribute('aria-checked', !isChecked);
     });
 })
+

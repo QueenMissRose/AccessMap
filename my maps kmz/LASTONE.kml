@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Yelp Accessibility</name>
+    <description/>
+    <Style id="icon-1899-0288D1-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-0288D1-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-0288D1">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-0288D1-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-0288D1-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1899-DB4436-labelson">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+    </Style>
+    <Folder>
+      <name>YA Test</name>
+      <Placemark>
+        <name>Raleigh Convention Center</name>
+        <address>500 S Salisbury St, Raleigh, NC 27601</address>
+        <description><![CDATA[Address: 500 S Salisbury St, Raleigh, NC 27601<br>SensoryRating: 2<br>MobilityRating: 3<br>ServiceDogReliefAreas: 3<br>WeelchairAccessible: 2<br>CommonAllergenRisk: 3]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="Address">
+            <value>500 S Salisbury St, Raleigh, NC 27601</value>
+          </Data>
+          <Data name="SensoryRating">
+            <value>2.0</value>
+          </Data>
+          <Data name="MobilityRating">
+            <value>3.0</value>
+          </Data>
+          <Data name="ServiceDogReliefAreas">
+            <value>3.0</value>
+          </Data>
+          <Data name="WeelchairAccessible">
+            <value>2.0</value>
+          </Data>
+          <Data name="CommonAllergenRisk">
+            <value>3.0</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>,-78.641472,35.77354</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Dave & Buster's]]></name>
+        <address>1111 Walnut St, Cary, NC 27511</address>
+        <description><![CDATA[Address: 1111 Walnut St, Cary, NC 27511<br>SensoryRating: 1<br>MobilityRating: 2<br>ServiceDogReliefAreas: 2<br>WeelchairAccessible: 2<br>CommonAllergenRisk: 1]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="Address">
+            <value>1111 Walnut St, Cary, NC 27511</value>
+          </Data>
+          <Data name="SensoryRating">
+            <value>1.0</value>
+          </Data>
+          <Data name="MobilityRating">
+            <value>2.0</value>
+          </Data>
+          <Data name="ServiceDogReliefAreas">
+            <value>2.0</value>
+          </Data>
+          <Data name="WeelchairAccessible">
+            <value>2.0</value>
+          </Data>
+          <Data name="CommonAllergenRisk">
+            <value>1.0</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>-78.762161,35.770859</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>The Peach Cobbler Factory</name>
+        <address>1071 Pine Plaza Dr, Apex, NC 27523</address>
+        <description><![CDATA[Address: 1071 Pine Plaza Dr, Apex, NC 27523<br>SensoryRating: 4<br>MobilityRating: 3<br>ServiceDogReliefAreas: 2<br>WeelchairAccessible: 3<br>CommonAllergenRisk: 2]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="Address">
+            <value>1071 Pine Plaza Dr, Apex, NC 27523</value>
+          </Data>
+          <Data name="SensoryRating">
+            <value>4.0</value>
+          </Data>
+          <Data name="MobilityRating">
+            <value>3.0</value>
+          </Data>
+          <Data name="ServiceDogReliefAreas">
+            <value>2.0</value>
+          </Data>
+          <Data name="WeelchairAccessible">
+            <value>3.0</value>
+          </Data>
+          <Data name="CommonAllergenRisk">
+            <value>2.0</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>-78.82939,35.74657</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Costco</name>
+        <address>2838 Wake Forest Rd, Raleigh, NC 27609</address>
+        <description><![CDATA[Address: 2838 Wake Forest Rd, Raleigh, NC 27609<br>SensoryRating: 3<br>MobilityRating: 2<br>ServiceDogReliefAreas: 2<br>WeelchairAccessible: 3<br>CommonAllergenRisk: 3]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <ExtendedData>
+          <Data name="Address">
+            <value>2838 Wake Forest Rd, Raleigh, NC 27609</value>
+          </Data>
+          <Data name="SensoryRating">
+            <value>3.0</value>
+          </Data>
+          <Data name="MobilityRating">
+            <value>2.0</value>
+          </Data>
+          <Data name="ServiceDogReliefAreas">
+            <value>2.0</value>
+          </Data>
+          <Data name="WeelchairAccessible">
+            <value>3.0</value>
+          </Data>
+          <Data name="CommonAllergenRisk">
+            <value>3.0</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>-78.622307,35.818298</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>YA Test: Sensory</name>
+      <IconStyle>
+        <Icon>
+          <href>files/touch.png</href>
+        </Icon>
+      </IconStyle>
+      <Placemark>
+        <name>2.0</name>
+        <address>500 S Salisbury St, Raleigh, NC 27601</address>
+        <description><![CDATA[Name: Raleigh Convention Center<br>Address: 500 S Salisbury St, Raleigh, NC 27601<br>MobilityRating: 3<br>ServiceDogReliefAreas: 3<br>WeelchairAccessible: 2<br>CommonAllergenRisk: 3]]></description>
+        <styleUrl>#icon-1899-DB4436-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="Name">
+            <value>Raleigh Convention Center</value>
+          </Data>
+          <Data name="Address">
+            <value>500 S Salisbury St, Raleigh, NC 27601</value>
+          </Data>
+          <Data name="MobilityRating">
+            <value>3.0</value>
+          </Data>
+          <Data name="ServiceDogReliefAreas">
+            <value>3.0</value>
+          </Data>
+          <Data name="WeelchairAccessible">
+            <value>2.0</value>
+          </Data>
+          <Data name="CommonAllergenRisk">
+            <value>3.0</value>
+          </Data>
+        </ExtendedData>
+        <Point>
+          <coordinates>,-78.641472,35.77354</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>1.0</name>
+        <address>1111 Walnut St, Cary, NC 27511</address>
+        <description><![CDATA[Name: Dave & Buster's<br>Address: 1111 Walnut St, Cary, NC 27511<br>MobilityRating: 2<br>ServiceDogReliefAreas: 2<br>WeelchairAccessible: 2<br>CommonAllergenRisk: 1]]></description>
+        <styleUrl>#icon-1899-DB4436-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="Name">
+            <value><![CDATA[Dave & Buster's]]></value>
+          </Data>
+          <Data name="Address">
+            <value>1111 Walnut St, Cary, NC 27511</value>
+          </Data>
+          <Data name="MobilityRating">
+            <value>2.0</value>
+          </Data>
+          <Data name="ServiceDogReliefAreas">
+            <value>2.0</value>
+          </Data>
+          <Data name="WeelchairAccessible">
+            <value>2.0</value>
+          </Data>
+          <Data name="CommonAllergenRisk">
+            <value>1.0</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>4.0</name>
+        <address>1071 Pine Plaza Dr, Apex, NC 27523</address>
+        <description><![CDATA[Name: The Peach Cobbler Factory<br>Address: 1071 Pine Plaza Dr, Apex, NC 27523<br>MobilityRating: 3<br>ServiceDogReliefAreas: 2<br>WeelchairAccessible: 3<br>CommonAllergenRisk: 2]]></description>
+        <styleUrl>#icon-1899-DB4436-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="Name">
+            <value>The Peach Cobbler Factory</value>
+          </Data>
+          <Data name="Address">
+            <value>1071 Pine Plaza Dr, Apex, NC 27523</value>
+          </Data>
+          <Data name="MobilityRating">
+            <value>3.0</value>
+          </Data>
+          <Data name="ServiceDogReliefAreas">
+            <value>2.0</value>
+          </Data>
+          <Data name="WeelchairAccessible">
+            <value>3.0</value>
+          </Data>
+          <Data name="CommonAllergenRisk">
+            <value>2.0</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>3.0</name>
+        <address>2838 Wake Forest Rd, Raleigh, NC 27609</address>
+        <description><![CDATA[Name: Costco<br>Address: 2838 Wake Forest Rd, Raleigh, NC 27609<br>MobilityRating: 2<br>ServiceDogReliefAreas: 2<br>WeelchairAccessible: 3<br>CommonAllergenRisk: 3]]></description>
+        <styleUrl>#icon-1899-DB4436-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="Name">
+            <value>Costco</value>
+          </Data>
+          <Data name="Address">
+            <value>2838 Wake Forest Rd, Raleigh, NC 27609</value>
+          </Data>
+          <Data name="MobilityRating">
+            <value>2.0</value>
+          </Data>
+          <Data name="ServiceDogReliefAreas">
+            <value>2.0</value>
+          </Data>
+          <Data name="WeelchairAccessible">
+            <value>3.0</value>
+          </Data>
+          <Data name="CommonAllergenRisk">
+            <value>3.0</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>YA Test: Mobility</name>
+      <Placemark>
+        <name>3.0</name>
+        <address>500 S Salisbury St, Raleigh, NC 27601</address>
+        <description><![CDATA[Name: Raleigh Convention Center<br>Address: 500 S Salisbury St, Raleigh, NC 27601<br>SensoryRating: 2<br>ServiceDogReliefAreas: 3<br>WeelchairAccessible: 2<br>CommonAllergenRisk: 3]]></description>
+        <styleUrl>#icon-1899-DB4436-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="Name">
+            <value>Raleigh Convention Center</value>
+          </Data>
+          <Data name="Address">
+            <value>500 S Salisbury St, Raleigh, NC 27601</value>
+          </Data>
+          <Data name="SensoryRating">
+            <value>2.0</value>
+          </Data>
+          <Data name="ServiceDogReliefAreas">
+            <value>3.0</value>
+          </Data>
+          <Data name="WeelchairAccessible">
+            <value>2.0</value>
+          </Data>
+          <Data name="CommonAllergenRisk">
+            <value>3.0</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>2.0</name>
+        <address>1111 Walnut St, Cary, NC 27511</address>
+        <description><![CDATA[Name: Dave & Buster's<br>Address: 1111 Walnut St, Cary, NC 27511<br>SensoryRating: 1<br>ServiceDogReliefAreas: 2<br>WeelchairAccessible: 2<br>CommonAllergenRisk: 1]]></description>
+        <styleUrl>#icon-1899-DB4436-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="Name">
+            <value><![CDATA[Dave & Buster's]]></value>
+          </Data>
+          <Data name="Address">
+            <value>1111 Walnut St, Cary, NC 27511</value>
+          </Data>
+          <Data name="SensoryRating">
+            <value>1.0</value>
+          </Data>
+          <Data name="ServiceDogReliefAreas">
+            <value>2.0</value>
+          </Data>
+          <Data name="WeelchairAccessible">
+            <value>2.0</value>
+          </Data>
+          <Data name="CommonAllergenRisk">
+            <value>1.0</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>3.0</name>
+        <address>1071 Pine Plaza Dr, Apex, NC 27523</address>
+        <description><![CDATA[Name: The Peach Cobbler Factory<br>Address: 1071 Pine Plaza Dr, Apex, NC 27523<br>SensoryRating: 4<br>ServiceDogReliefAreas: 2<br>WeelchairAccessible: 3<br>CommonAllergenRisk: 2]]></description>
+        <styleUrl>#icon-1899-DB4436-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="Name">
+            <value>The Peach Cobbler Factory</value>
+          </Data>
+          <Data name="Address">
+            <value>1071 Pine Plaza Dr, Apex, NC 27523</value>
+          </Data>
+          <Data name="SensoryRating">
+            <value>4.0</value>
+          </Data>
+          <Data name="ServiceDogReliefAreas">
+            <value>2.0</value>
+          </Data>
+          <Data name="WeelchairAccessible">
+            <value>3.0</value>
+          </Data>
+          <Data name="CommonAllergenRisk">
+            <value>2.0</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>2.0</name>
+        <address>2838 Wake Forest Rd, Raleigh, NC 27609</address>
+        <description><![CDATA[Name: Costco<br>Address: 2838 Wake Forest Rd, Raleigh, NC 27609<br>SensoryRating: 3<br>ServiceDogReliefAreas: 2<br>WeelchairAccessible: 3<br>CommonAllergenRisk: 3]]></description>
+        <styleUrl>#icon-1899-DB4436-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="Name">
+            <value>Costco</value>
+          </Data>
+          <Data name="Address">
+            <value>2838 Wake Forest Rd, Raleigh, NC 27609</value>
+          </Data>
+          <Data name="SensoryRating">
+            <value>3.0</value>
+          </Data>
+          <Data name="ServiceDogReliefAreas">
+            <value>2.0</value>
+          </Data>
+          <Data name="WeelchairAccessible">
+            <value>3.0</value>
+          </Data>
+          <Data name="CommonAllergenRisk">
+            <value>3.0</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>YA Test: Service Dog</name>
+      <Placemark>
+        <name>3.0</name>
+        <address>500 S Salisbury St, Raleigh, NC 27601</address>
+        <description><![CDATA[Name: Raleigh Convention Center<br>Address: 500 S Salisbury St, Raleigh, NC 27601<br>SensoryRating: 2<br>MobilityRating: 3<br>WeelchairAccessible: 2<br>CommonAllergenRisk: 3]]></description>
+        <styleUrl>#icon-1899-DB4436-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="Name">
+            <value>Raleigh Convention Center</value>
+          </Data>
+          <Data name="Address">
+            <value>500 S Salisbury St, Raleigh, NC 27601</value>
+          </Data>
+          <Data name="SensoryRating">
+            <value>2.0</value>
+          </Data>
+          <Data name="MobilityRating">
+            <value>3.0</value>
+          </Data>
+          <Data name="WeelchairAccessible">
+            <value>2.0</value>
+          </Data>
+          <Data name="CommonAllergenRisk">
+            <value>3.0</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>2.0</name>
+        <address>1111 Walnut St, Cary, NC 27511</address>
+        <description><![CDATA[Name: Dave & Buster's<br>Address: 1111 Walnut St, Cary, NC 27511<br>SensoryRating: 1<br>MobilityRating: 2<br>WeelchairAccessible: 2<br>CommonAllergenRisk: 1]]></description>
+        <styleUrl>#icon-1899-DB4436-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="Name">
+            <value><![CDATA[Dave & Buster's]]></value>
+          </Data>
+          <Data name="Address">
+            <value>1111 Walnut St, Cary, NC 27511</value>
+          </Data>
+          <Data name="SensoryRating">
+            <value>1.0</value>
+          </Data>
+          <Data name="MobilityRating">
+            <value>2.0</value>
+          </Data>
+          <Data name="WeelchairAccessible">
+            <value>2.0</value>
+          </Data>
+          <Data name="CommonAllergenRisk">
+            <value>1.0</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>2.0</name>
+        <address>1071 Pine Plaza Dr, Apex, NC 27523</address>
+        <description><![CDATA[Name: The Peach Cobbler Factory<br>Address: 1071 Pine Plaza Dr, Apex, NC 27523<br>SensoryRating: 4<br>MobilityRating: 3<br>WeelchairAccessible: 3<br>CommonAllergenRisk: 2]]></description>
+        <styleUrl>#icon-1899-DB4436-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="Name">
+            <value>The Peach Cobbler Factory</value>
+          </Data>
+          <Data name="Address">
+            <value>1071 Pine Plaza Dr, Apex, NC 27523</value>
+          </Data>
+          <Data name="SensoryRating">
+            <value>4.0</value>
+          </Data>
+          <Data name="MobilityRating">
+            <value>3.0</value>
+          </Data>
+          <Data name="WeelchairAccessible">
+            <value>3.0</value>
+          </Data>
+          <Data name="CommonAllergenRisk">
+            <value>2.0</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>2.0</name>
+        <address>2838 Wake Forest Rd, Raleigh, NC 27609</address>
+        <description><![CDATA[Name: Costco<br>Address: 2838 Wake Forest Rd, Raleigh, NC 27609<br>SensoryRating: 3<br>MobilityRating: 2<br>WeelchairAccessible: 3<br>CommonAllergenRisk: 3]]></description>
+        <styleUrl>#icon-1899-DB4436-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="Name">
+            <value>Costco</value>
+          </Data>
+          <Data name="Address">
+            <value>2838 Wake Forest Rd, Raleigh, NC 27609</value>
+          </Data>
+          <Data name="SensoryRating">
+            <value>3.0</value>
+          </Data>
+          <Data name="MobilityRating">
+            <value>2.0</value>
+          </Data>
+          <Data name="WeelchairAccessible">
+            <value>3.0</value>
+          </Data>
+          <Data name="CommonAllergenRisk">
+            <value>3.0</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>YA Test: Wheelchair Accessible</name>
+      <Placemark>
+        <name>2.0</name>
+        <address>500 S Salisbury St, Raleigh, NC 27601</address>
+        <description><![CDATA[Name: Raleigh Convention Center<br>Address: 500 S Salisbury St, Raleigh, NC 27601<br>SensoryRating: 2<br>MobilityRating: 3<br>ServiceDogReliefAreas: 3<br>CommonAllergenRisk: 3]]></description>
+        <styleUrl>#icon-1899-DB4436-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="Name">
+            <value>Raleigh Convention Center</value>
+          </Data>
+          <Data name="Address">
+            <value>500 S Salisbury St, Raleigh, NC 27601</value>
+          </Data>
+          <Data name="SensoryRating">
+            <value>2.0</value>
+          </Data>
+          <Data name="MobilityRating">
+            <value>3.0</value>
+          </Data>
+          <Data name="ServiceDogReliefAreas">
+            <value>3.0</value>
+          </Data>
+          <Data name="CommonAllergenRisk">
+            <value>3.0</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>2.0</name>
+        <address>1111 Walnut St, Cary, NC 27511</address>
+        <description><![CDATA[Name: Dave & Buster's<br>Address: 1111 Walnut St, Cary, NC 27511<br>SensoryRating: 1<br>MobilityRating: 2<br>ServiceDogReliefAreas: 2<br>CommonAllergenRisk: 1]]></description>
+        <styleUrl>#icon-1899-DB4436-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="Name">
+            <value><![CDATA[Dave & Buster's]]></value>
+          </Data>
+          <Data name="Address">
+            <value>1111 Walnut St, Cary, NC 27511</value>
+          </Data>
+          <Data name="SensoryRating">
+            <value>1.0</value>
+          </Data>
+          <Data name="MobilityRating">
+            <value>2.0</value>
+          </Data>
+          <Data name="ServiceDogReliefAreas">
+            <value>2.0</value>
+          </Data>
+          <Data name="CommonAllergenRisk">
+            <value>1.0</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>3.0</name>
+        <address>1071 Pine Plaza Dr, Apex, NC 27523</address>
+        <description><![CDATA[Name: The Peach Cobbler Factory<br>Address: 1071 Pine Plaza Dr, Apex, NC 27523<br>SensoryRating: 4<br>MobilityRating: 3<br>ServiceDogReliefAreas: 2<br>CommonAllergenRisk: 2]]></description>
+        <styleUrl>#icon-1899-DB4436-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="Name">
+            <value>The Peach Cobbler Factory</value>
+          </Data>
+          <Data name="Address">
+            <value>1071 Pine Plaza Dr, Apex, NC 27523</value>
+          </Data>
+          <Data name="SensoryRating">
+            <value>4.0</value>
+          </Data>
+          <Data name="MobilityRating">
+            <value>3.0</value>
+          </Data>
+          <Data name="ServiceDogReliefAreas">
+            <value>2.0</value>
+          </Data>
+          <Data name="CommonAllergenRisk">
+            <value>2.0</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>3.0</name>
+        <address>2838 Wake Forest Rd, Raleigh, NC 27609</address>
+        <description><![CDATA[Name: Costco<br>Address: 2838 Wake Forest Rd, Raleigh, NC 27609<br>SensoryRating: 3<br>MobilityRating: 2<br>ServiceDogReliefAreas: 2<br>CommonAllergenRisk: 3]]></description>
+        <styleUrl>#icon-1899-DB4436-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="Name">
+            <value>Costco</value>
+          </Data>
+          <Data name="Address">
+            <value>2838 Wake Forest Rd, Raleigh, NC 27609</value>
+          </Data>
+          <Data name="SensoryRating">
+            <value>3.0</value>
+          </Data>
+          <Data name="MobilityRating">
+            <value>2.0</value>
+          </Data>
+          <Data name="ServiceDogReliefAreas">
+            <value>2.0</value>
+          </Data>
+          <Data name="CommonAllergenRisk">
+            <value>3.0</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>YA Test: Allergens</name>
+      <Placemark>
+        <name>3.0</name>
+        <address>500 S Salisbury St, Raleigh, NC 27601</address>
+        <description><![CDATA[Name: Raleigh Convention Center<br>Address: 500 S Salisbury St, Raleigh, NC 27601<br>SensoryRating: 2<br>MobilityRating: 3<br>ServiceDogReliefAreas: 3<br>WeelchairAccessible: 2]]></description>
+        <styleUrl>#icon-1899-DB4436-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="Name">
+            <value>Raleigh Convention Center</value>
+          </Data>
+          <Data name="Address">
+            <value>500 S Salisbury St, Raleigh, NC 27601</value>
+          </Data>
+          <Data name="SensoryRating">
+            <value>2.0</value>
+          </Data>
+          <Data name="MobilityRating">
+            <value>3.0</value>
+          </Data>
+          <Data name="ServiceDogReliefAreas">
+            <value>3.0</value>
+          </Data>
+          <Data name="WeelchairAccessible">
+            <value>2.0</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>1.0</name>
+        <address>1111 Walnut St, Cary, NC 27511</address>
+        <description><![CDATA[Name: Dave & Buster's<br>Address: 1111 Walnut St, Cary, NC 27511<br>SensoryRating: 1<br>MobilityRating: 2<br>ServiceDogReliefAreas: 2<br>WeelchairAccessible: 2]]></description>
+        <styleUrl>#icon-1899-DB4436-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="Name">
+            <value><![CDATA[Dave & Buster's]]></value>
+          </Data>
+          <Data name="Address">
+            <value>1111 Walnut St, Cary, NC 27511</value>
+          </Data>
+          <Data name="SensoryRating">
+            <value>1.0</value>
+          </Data>
+          <Data name="MobilityRating">
+            <value>2.0</value>
+          </Data>
+          <Data name="ServiceDogReliefAreas">
+            <value>2.0</value>
+          </Data>
+          <Data name="WeelchairAccessible">
+            <value>2.0</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>2.0</name>
+        <address>1071 Pine Plaza Dr, Apex, NC 27523</address>
+        <description><![CDATA[Name: The Peach Cobbler Factory<br>Address: 1071 Pine Plaza Dr, Apex, NC 27523<br>SensoryRating: 4<br>MobilityRating: 3<br>ServiceDogReliefAreas: 2<br>WeelchairAccessible: 3]]></description>
+        <styleUrl>#icon-1899-DB4436-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="Name">
+            <value>The Peach Cobbler Factory</value>
+          </Data>
+          <Data name="Address">
+            <value>1071 Pine Plaza Dr, Apex, NC 27523</value>
+          </Data>
+          <Data name="SensoryRating">
+            <value>4.0</value>
+          </Data>
+          <Data name="MobilityRating">
+            <value>3.0</value>
+          </Data>
+          <Data name="ServiceDogReliefAreas">
+            <value>2.0</value>
+          </Data>
+          <Data name="WeelchairAccessible">
+            <value>3.0</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+      <Placemark>
+        <name>3.0</name>
+        <address>2838 Wake Forest Rd, Raleigh, NC 27609</address>
+        <description><![CDATA[Name: Costco<br>Address: 2838 Wake Forest Rd, Raleigh, NC 27609<br>SensoryRating: 3<br>MobilityRating: 2<br>ServiceDogReliefAreas: 2<br>WeelchairAccessible: 3]]></description>
+        <styleUrl>#icon-1899-DB4436-labelson</styleUrl>
+        <ExtendedData>
+          <Data name="Name">
+            <value>Costco</value>
+          </Data>
+          <Data name="Address">
+            <value>2838 Wake Forest Rd, Raleigh, NC 27609</value>
+          </Data>
+          <Data name="SensoryRating">
+            <value>3.0</value>
+          </Data>
+          <Data name="MobilityRating">
+            <value>2.0</value>
+          </Data>
+          <Data name="ServiceDogReliefAreas">
+            <value>2.0</value>
+          </Data>
+          <Data name="WeelchairAccessible">
+            <value>3.0</value>
+          </Data>
+        </ExtendedData>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
