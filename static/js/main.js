@@ -3,14 +3,14 @@ window.addEventListener('load', () => {
     //after window is loaded completely 
     let preloader = document.querySelector('.preloader')
 
-    setTimeout( function() {
+    setTimeout(function () {
         preloader.classList.add('disappear')
     }, 2000)
-    
+
 })
 
- //Setting up the map
- function initMap() {
+//Setting up the map
+function initMap() {
     // Initialize the map
     const map = new google.maps.Map(document.querySelector('#map'), {
         center: { lat: 35.7796, lng: -78.6382 }, // Raleigh, NC
@@ -40,15 +40,13 @@ window.addEventListener('load', () => {
 
 
 // Checked items in AccessibilityNeeds html
-function changeCheckbox(code) {
-    const item = document.querySelectorAll("#chkPref");
-    const checked = item.getAttribute("aria-checked");
-  
-    if (code && code !== "Space") {
-      return;
-    } else if (checked === "true") {
-      item.setAttribute("aria-checked", "false");
-    } else {
-      item.setAttribute("aria-checked", "true");
-    }
-  }
+// set variable for all checkbox items
+const items = document.querySelectorAll('.item');
+
+//add event listeners to each checkbox element
+items.forEach(item => {
+    item.addEventListener('click', (event) => {
+        const isChecked = item.getAttribute('aria-checked') === 'true';
+        item.setAttribute('aria-checked', !isChecked);
+    });
+})
