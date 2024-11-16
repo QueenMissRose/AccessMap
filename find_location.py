@@ -14,3 +14,11 @@ def query_find_by_location_name(location):
     cursor.execute(sql)
     return cursor.fetchall()
 
+def query_find_by_address(address):
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+    sql = (f'SELECT * FROM ratings WHERE Address LIKE "%{address}%"')
+    print(sql)
+    cursor.execute(sql)
+    return cursor.fetchall()
+
