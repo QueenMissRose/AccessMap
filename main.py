@@ -25,14 +25,17 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
 # # Use credentials to create a client to interact with the Google Drive API
+# # Use credentials to create a client to interact with the Google Drive API
 # scope = ["https://spreadsheets.google.com/feeds"]
 # credentials = ServiceAccountCredentials.from_json_keyfile_name(
 #     "client_secret.json", scope)
 # client = gspread.authorize(credentials)
 
+
 # # Find a workbook by name and open the first sheet
 # sheet = client.open("LocationsAccessMap").sheet2
 
+# print(sheet.get_all_values())
 # print(sheet.get_all_values())
 
 
@@ -170,10 +173,40 @@ def update_rating():
         
         # Check information
         print(f"Sensory Rating: {sensory_rating}",
+        print(f"Sensory Rating: {sensory_rating}",
               f"Mobility Rating: {mobility_rating}",
               f"Service Dog Relief Rating: {service_dog_relief_rating}",
               f"Wheelchair Rating: {wheelchair_rating}",
               f"Common Allergens Rating: {common_allergens_rating}")
+        
+        if not sensory_rating and not mobility_rating and not service_dog_relief_rating \
+            and not wheelchair_rating and not common_allergens_rating:
+                # The user must choose to update either a sensory, mobility, service dog relief,
+                # wheelchair, or common allergens rating 
+                flash("Please add a category rating.")
+                return redirect(url_for("update_rating"))
+                
+        else:
+            # If the user puts an accessibility rating in, update database
+            print("A category's rating has been updated!")
+            
+            # TODO: Use new rating to recalculate a location's average accessibility score
+            ## for that category
+            new_record = Locations(Name=location_name, Address=address, SensoryRating=sensory_rating,
+                                MobilityRating=mobility_rating,
+                                ServiceDogRelief=service_dog_relief_rating, WheelchairAccessible=wheelchair_rating,
+                                CommonAllergenRisk=common_allergens_rating)
+
+            print(new_record)
+            try:
+                add_new_rating_to_db(new_record)
+                
+                # Attempt to save the updated score
+                return redirect(url_for("save_score"))
+            except Exception as e:
+                print(f"Couldn't reroute to save the updated score. Exception: {e}")
+                return redirect(url_for("update_rating"))
+            
         
         if not sensory_rating and not mobility_rating and not service_dog_relief_rating \
             and not wheelchair_rating and not common_allergens_rating:

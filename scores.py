@@ -2,7 +2,11 @@ import sqlite3
 
 import gspread
 
+<<<<<<< HEAD
 gc = gspread.service_account(filename='accessmap-441715-705d96e6c09e.json')
+=======
+gc = gspread.service_account(filename='/Users/mermaid/PycharmProjects/AccessMap/accessmap-441715-705d96e6c09e.json')
+>>>>>>> 54ba336cc04df86805f7e315035a835b24045f79
 
 sh = gc.open_by_key("1O01Exonl72cF3G5ZYZzYgYJ55ObHaqrp0dXCHeZ4L-E")
 
