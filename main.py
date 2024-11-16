@@ -16,7 +16,7 @@ from models import Locations
 # Configure application
 app = Flask(__name__)
 
-app.config["SECRET_KEY"] = "IAMAKEY"
+app.config["SECRET_KEY"] = os.environ.get("KEY")
 
 # ------------------- Google Sheets API Setup ------------------- #
 
