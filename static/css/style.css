@@ -143,3 +143,9 @@ form {
   border: 2px solid #ccc;
   margin-top: 20px;
 }
+
+/***Error Messages***/
+
+.flash {
+  color:#cf727f;
+}
