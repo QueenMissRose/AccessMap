@@ -5,14 +5,17 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
-from scores import query_sensory_rating_sql
+from scores import query_sensory_rating_sql, query_mobility_rating_sql, query_service_dog_relief_rating_sql, \
+    query_wheelchair_accessible_rating_sql, query_allergen_risk_rating_sql
 
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 
-SPREADSHEET_ID = "1O01Exonl72cF3G5ZYZzYgYJ55ObHaqrp0dXCHeZ4L-E"
+# SPREADSHEET_ID = "1O01Exonl72cF3G5ZYZzYgYJ55ObHaqrp0dXCHeZ4L-E"
+
+SPREADSHEET_ID = "1RctGomuhioyOC47IUoDBONAsKKKVUqMvTyTAimvtcLA"
 
 
-def main():
+def write_agg_scores_to_gsheets():
     credentials = None
     if os.path.exists("token.json"):
         credentials = Credentials.from_authorized_user_file("token.json", SCOPES)
@@ -29,20 +32,51 @@ def main():
         service = build("sheets", "v4", credentials=credentials)
         sheets = service.spreadsheets()
 
-        for row in range(2,10):
+        for row in range(2, 10):
 
-            location_lookup = sheets.values().get(spreadsheetId=SPREADSHEET_ID, range=f"Sheet2!B{row}").execute().get("values")[0][0]
+            location_lookup = \
+                sheets.values().get(spreadsheetId=SPREADSHEET_ID, range=f"Sheet2!A{row}").execute().get("values")[0][0]
 
             avg_sensory_rating = query_sensory_rating_sql()
             for tuple in avg_sensory_rating:
                 if tuple[0] == location_lookup:
                     print(f'Found {tuple[0]} Writing {tuple[1]} to gsheets')
+                    sheets.values().update(spreadsheetId=SPREADSHEET_ID, range=f"Sheet2!C{row}",
+                                           valueInputOption="USER_ENTERED",
+                                           body={"values": [[f"{tuple[1]}"]]}).execute()
+
+            avg_mobility_rating = query_mobility_rating_sql()
+            for tuple in avg_mobility_rating:
+                if tuple[0] == location_lookup:
+                    print(f'Found {tuple[0]} Writing {tuple[1]} to gsheets')
+                    sheets.values().update(spreadsheetId=SPREADSHEET_ID, range=f"Sheet2!D{row}",
+                                           valueInputOption="USER_ENTERED",
+                                           body={"values": [[f"{tuple[1]}"]]}).execute()
+
+            avg_service_dog_relief_rating = query_service_dog_relief_rating_sql()
+            for tuple in avg_service_dog_relief_rating:
+                if tuple[0] == location_lookup:
+                    print(f'Found {tuple[0]} Writing {tuple[1]} to gsheets')
+                    sheets.values().update(spreadsheetId=SPREADSHEET_ID, range=f"Sheet2!E{row}",
+                                           valueInputOption="USER_ENTERED",
+                                           body={"values": [[f"{tuple[1]}"]]}).execute()
+
+            avg_wheelchair_accessible_rating = query_wheelchair_accessible_rating_sql()
+            for tuple in avg_wheelchair_accessible_rating:
+                if tuple[0] == location_lookup:
+                    print(f'Found {tuple[0]} Writing {tuple[1]} to gsheets')
                     sheets.values().update(spreadsheetId=SPREADSHEET_ID, range=f"Sheet2!F{row}",
-                                   valueInputOption="USER_ENTERED", body={"values": [[f"{tuple[1]}"]]}).execute()
+                                           valueInputOption="USER_ENTERED",
+                                           body={"values": [[f"{tuple[1]}"]]}).execute()
+
+            avg_allergen_risk_rating = query_allergen_risk_rating_sql()
+            for tuple in avg_allergen_risk_rating:
+                if tuple[0] == location_lookup:
+                    print(f'Found {tuple[0]} Writing {tuple[1]} to gsheets')
+                    sheets.values().update(spreadsheetId=SPREADSHEET_ID, range=f"Sheet2!G{row}",
+                                           valueInputOption="USER_ENTERED",
+                                           body={"values": [[f"{tuple[1]}"]]}).execute()
+
 
     except HttpError as error:
         print(error)
-
-
-if __name__ == "__main__":
-    main()
