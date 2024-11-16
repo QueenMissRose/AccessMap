@@ -197,7 +197,7 @@ def update_rating():
             # If the user puts an accessibility rating in, update database
             print("A category's rating has been updated!")
             
-            # TODO: Use new rating to recalculate a location's average accessibility score
+            # Use new rating to recalculate a location's average accessibility score
             ## for that category
             new_record = Locations(Name=location_name, Address=address, SensoryRating=sensory_rating,
                                 MobilityRating=mobility_rating,
