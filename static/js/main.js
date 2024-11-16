@@ -37,3 +37,18 @@ window.addEventListener('load', () => {
         }
     })
 }
+
+
+// Checked items in AccessibilityNeeds html
+function changeCheckbox(code) {
+    const item = document.querySelectorAll("#chkPref");
+    const checked = item.getAttribute("aria-checked");
+  
+    if (code && code !== "Space") {
+      return;
+    } else if (checked === "true") {
+      item.setAttribute("aria-checked", "false");
+    } else {
+      item.setAttribute("aria-checked", "true");
+    }
+  }
