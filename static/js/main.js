@@ -15,7 +15,7 @@ window.addEventListener('load', () => {
     const map = new google.maps.Map(document.querySelector('#map'), {
         center: { lat: 35.7796, lng: -78.6382 }, // Raleigh, NC
         zoom: 12,
-    });
+    })
 
     // URL to the KML file (use the direct download link)
     const kmlUrl = 'https://drive.google.com/uc?id=1HxHZR1Wb3o9kMyhpPxXI9NNedF3Vsfnz&export=download'
@@ -31,7 +31,7 @@ window.addEventListener('load', () => {
     // Add error handling
     google.maps.event.addListener(kmlLayer, "status_changed", () => {
         if (kmlLayer.getStatus() !== "OK") {
-            console.error("KML Layer failed to load: ", kmlLayer.getStatus());
+            console.error("KML Layer failed to load: ", kmlLayer.getStatus())
         } else {
             console.log('it is ok')
         }
