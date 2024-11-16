@@ -6,8 +6,6 @@ gc = gspread.service_account(filename='accessmap-441715-705d96e6c09e.json')
 
 sh = gc.open_by_key("1O01Exonl72cF3G5ZYZzYgYJ55ObHaqrp0dXCHeZ4L-E")
 
-# print(sh.sheet1.get('A2:A1000'))
-
 worksheet = sh.worksheet("Sheet2")
 
 
@@ -22,8 +20,10 @@ def query_sql():
 def write_to_gsheet():
     results = query_sql()
     for i in results:
-        if not worksheet.findall(i[0], in_column=1):
-            worksheet.append_row(i)
+        location_name = i[1]
+        address = i[2]
+        values = [location_name, address]
 
+        if not worksheet.findall(i[1]):
+            worksheet.append_row(values)
 
-# write_to_gsheet()
